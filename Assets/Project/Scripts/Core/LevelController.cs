@@ -1,53 +1,68 @@
 using DarkPixelGD.Interaction;
 using DarkPixelGD.Player;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class LevelController : MonoBehaviour
+
+namespace DarkPixelGD.Core
 {
-    [SerializeField] private PortalTrigger portal;
-    [SerializeField] private LevelConfig config;
-    [SerializeField] private PlayerController player;
-
-    private bool _hasUsedFreeDeath;
-
-    private void Start()
+    public class LevelController : MonoBehaviour
     {
-        if (config.startWithDashLocked)
-            player.SetDashLocked(true);
-        if (config.startWithInvertedControls)
-            player.SetControlsInverted(true);
+        [SerializeField] private PortalTrigger portal;
+        [SerializeField] private LevelConfig config;
+        [SerializeField] private PlayerController player;
+        [SerializeField] private Transform _spawnPoint;
 
-        portal.OnLevelComplete += HandleLevelComplete;
-        TimerService.Instance.OnTimerExpired += HandleTimerExpired;
-        TimerService.Instance.StartTimer(config.timerDuration);
-    }
+        private bool _hasUsedFreeDeath;
 
-    private void OnDestroy()
-    {
-        portal.OnLevelComplete -= HandleLevelComplete;
-        if (TimerService.Instance != null)
-            TimerService.Instance.OnTimerExpired -= HandleTimerExpired;
-    }
-
-    private void HandleLevelComplete()
-    {
-        Debug.Log("Level Complete!");
-        Time.timeScale = 0f; // placeholder until scene-transition flow (Day 6)
-    }
-
-    private void HandleTimerExpired()
-    {
-        if (config.firstDeathIsFree && !_hasUsedFreeDeath)
+        private void Start()
         {
-            _hasUsedFreeDeath = true;
-            Debug.Log("First death forgiven — respawning in place. (Hint UI lands Day 5.)");
+            if (config.startWithDashLocked)
+                player.SetDashLocked(true);
+            if (config.startWithInvertedControls)
+                player.SetControlsInverted(true);
+
+            portal.OnLevelComplete += HandleLevelComplete;
+            TimerService.Instance.OnTimerExpired += HandleTimerExpired;
             TimerService.Instance.StartTimer(config.timerDuration);
-            return;
         }
 
-        Debug.Log("Level exploded — restarting");
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        private void OnDestroy()
+        {
+            portal.OnLevelComplete -= HandleLevelComplete;
+            if (TimerService.Instance != null)
+                TimerService.Instance.OnTimerExpired -= HandleTimerExpired;
+        }
+
+        private void HandleLevelComplete()
+        {
+            Debug.Log("Level Complete!");
+            Time.timeScale = 0f; // placeholder until scene-transition flow (Day 6)
+        }
+
+        private void HandleTimerExpired()
+        {
+            PauseService.Instance.SetPaused(false);
+
+            if (config.firstDeathIsFree && !_hasUsedFreeDeath)
+            {
+                _hasUsedFreeDeath = true;
+                HintPopupUI.Instance?.Show("Try pausing.");
+                StartCoroutine(RespawnWithInvulnerability());
+                return;
+            }
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        private IEnumerator RespawnWithInvulnerability()
+        {
+            player.Teleport(_spawnPoint.position);
+            player.SetInvulnerable(true);
+            TimerService.Instance.StartTimer(config.timerDuration);
+
+            yield return new WaitForSecondsRealtime(1f); // unscaled: safe even if paused mid-window
+            player.SetInvulnerable(false);
+        }
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   timerDuration: 60
   startWithDashLocked: 0
   startWithInvertedControls: 1
-  firstDeathIsFree: 0
+  firstDeathIsFree: 1

@@ -27,6 +27,8 @@ namespace DarkPixelGD.Player
 
         public float CurrentSpeed = 0f;
 
+        public bool IsInvulnerable { get; private set; }
+
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
@@ -130,6 +132,16 @@ namespace DarkPixelGD.Player
         public void SetControlsInverted(bool inverted)
         {
              _controlsInverted = inverted;
+        }
+
+        public void SetInvulnerable(bool value)
+        {
+            IsInvulnerable = value;
+        }
+        public void Teleport(Vector3 position)
+        {
+            _rb.linearVelocity = Vector2.zero;
+            transform.position = position;
         }
     }
 }

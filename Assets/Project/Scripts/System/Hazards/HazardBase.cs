@@ -1,3 +1,4 @@
+using DarkPixelGD.Player;
 using System;
 using UnityEngine;
 
@@ -10,8 +11,11 @@ namespace DarkPixelGD.Systems.Hazard
 
         protected void KillPlayer(GameObject player)
         {
+            if (player.TryGetComponent(out PlayerController controller) && controller.IsInvulnerable)
+                return;
+
             OnPlayerKilled?.Invoke();
-            TimerService.Instance?.ForceExpire(); // reuses the existing explode/restart flow
+            TimerService.Instance?.ForceExpire();
         }
     }
 }
