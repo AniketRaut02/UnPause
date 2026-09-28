@@ -7,5 +7,6 @@ public class LevelConfig : ScriptableObject
     public bool startWithDashLocked = false;
     public bool startWithInvertedControls = false;
     public bool firstDeathIsFree = false;
+    public string nextSceneName;
 
 }

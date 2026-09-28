@@ -37,8 +37,11 @@ namespace DarkPixelGD.Core
 
         private void HandleLevelComplete()
         {
-            Debug.Log("Level Complete!");
-            Time.timeScale = 0f; // placeholder until scene-transition flow (Day 6)
+            PauseService.Instance.SetPaused(false); // safety: never load next scene mid-pause
+            if (!string.IsNullOrEmpty(config.nextSceneName))
+                SceneManager.LoadScene(config.nextSceneName);
+            else
+                Debug.LogWarning("No next scene configured on this LevelConfig.");
         }
 
         private void HandleTimerExpired()

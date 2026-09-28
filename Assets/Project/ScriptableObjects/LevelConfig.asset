@@ -16,3 +16,4 @@ MonoBehaviour:
   startWithDashLocked: 0
   startWithInvertedControls: 1
   firstDeathIsFree: 1
+  nextSceneName: Test2
