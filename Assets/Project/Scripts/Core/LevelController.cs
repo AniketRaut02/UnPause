@@ -1,7 +1,8 @@
 using DarkPixelGD.Interaction;
 using DarkPixelGD.Player;
-using UnityEngine;
+using DarkPixelGD.UI;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
@@ -14,6 +15,9 @@ namespace DarkPixelGD.Core
         [SerializeField] private PlayerController player;
         [SerializeField] private Transform _spawnPoint;
 
+        [Header("Explosion")]
+        [SerializeField] private GameObject _explosionPrefab;
+        [SerializeField] private float _explosionDelayBeforeFade = 0.5f;
         private bool _hasUsedFreeDeath;
 
         private void Start()
@@ -37,9 +41,9 @@ namespace DarkPixelGD.Core
 
         private void HandleLevelComplete()
         {
-            PauseService.Instance.SetPaused(false); // safety: never load next scene mid-pause
+            PauseService.Instance.SetPaused(false);
             if (!string.IsNullOrEmpty(config.nextSceneName))
-                SceneManager.LoadScene(config.nextSceneName);
+                SceneLoader.Instance.LoadScene(config.nextSceneName);
             else
                 Debug.LogWarning("No next scene configured on this LevelConfig.");
         }
@@ -56,7 +60,15 @@ namespace DarkPixelGD.Core
                 return;
             }
 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            StartCoroutine(ExplodeAndReload());
+        }
+        private IEnumerator ExplodeAndReload()
+        {
+            if (_explosionPrefab != null)
+                Instantiate(_explosionPrefab, player.transform.position, Quaternion.identity);
+
+            yield return new WaitForSecondsRealtime(_explosionDelayBeforeFade); // unscaled: stays consistent even mid-pause
+            SceneLoader.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }
         private IEnumerator RespawnWithInvulnerability()
         {

@@ -18,4 +18,4 @@ MonoBehaviour:
   canDash: 1
   dashBurstSpeed: 20
   dashDuration: 0.15
-  dashCooldown: 4
+  dashCooldown: 3

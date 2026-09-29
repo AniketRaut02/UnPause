@@ -32,6 +32,8 @@ namespace DarkPixelGD.Player
 
         public bool IsInvulnerable { get; private set; }
 
+        public Health Health => _health;
+
 
 
         private void Awake()

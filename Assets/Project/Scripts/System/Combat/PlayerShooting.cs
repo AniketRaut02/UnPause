@@ -1,7 +1,8 @@
+using DarkPixelGD.Combat;
 using DarkPixelGD.Systems.Combat;
+using DarkPixelGD.VFX;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 namespace DarkPixelGD.Player
 {
@@ -10,9 +11,20 @@ namespace DarkPixelGD.Player
         [SerializeField] private Transform _aimPivot;  
         [SerializeField] private Transform _muzzle;
         [SerializeField] private GameObject _bulletPrefab;
-        [SerializeField] private int _damage = 25;
+        [SerializeField] private int _minDamage = 15;
+        [SerializeField] private int _maxDamage = 30;
         [SerializeField] private Camera _mainCamera;
         [SerializeField] private SpriteRenderer _aimPivotRenderer;
+
+        [Header("Shooting Properties")]
+        [SerializeField] private float _fireCooldown = 0.15f;
+        private float _nextFireTime;
+
+        [Header("Animator Refrences")]
+        [SerializeField] private GunFireAnimator _gunAnimator;
+        [SerializeField] private MuzzleFlash _muzzleFlash;
+
+
         public Vector2 AimDirection { get; private set; }
 
 
@@ -21,8 +33,11 @@ namespace DarkPixelGD.Player
             if (PauseService.Instance != null && PauseService.Instance.IsPaused) return;
 
             AimAtMouse();
-            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame && Time.time >= _nextFireTime)
+            {
                 Shoot();
+                _nextFireTime = Time.time + _fireCooldown;
+            }
         }
 
         private void AimAtMouse()
@@ -41,9 +56,12 @@ namespace DarkPixelGD.Player
         private void Shoot()
         {
             var bullet = Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation);
-            bullet.GetComponent<Projectile>().Initialize(_damage, "Enemy");
+            int damage = Random.Range(_minDamage, _maxDamage + 1); // max is exclusive on ints, hence +1
+            bullet.GetComponent<Projectile>().Initialize(damage, "Enemy");
+            _gunAnimator.PlayFire();
+            _muzzleFlash.Flash();
         }
-       
+
 
     }
 }

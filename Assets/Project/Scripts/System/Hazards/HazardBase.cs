@@ -1,4 +1,5 @@
 using DarkPixelGD.Player;
+using DarkPixelGD.Systems.Combat;
 using System;
 using UnityEngine;
 
@@ -6,27 +7,15 @@ namespace DarkPixelGD.Systems.Hazard
 {
     public abstract class HazardBase : MonoBehaviour
     {
-        [SerializeField] protected bool _ignoresPause = false; // unused until Day 5's L4 twist
-        public event Action OnPlayerKilled;
+        [SerializeField] protected bool _ignoresPause = false;
 
-/*        protected void KillPlayer(GameObject player)
-        {
-            if (player.TryGetComponent(out PlayerController controller) && controller.IsInvulnerable)
-                return;
+        public event Action<GameObject> OnEntityKilled;
 
-            OnPlayerKilled?.Invoke();
-            TimerService.Instance?.ForceExpire();
-        }*/
         protected void ApplyHazardDamage(GameObject target)
         {
-            if (!target.TryGetComponent(out Combat.Health health)) return;
-            bool died = health.Kill();
-            if (died && target.CompareTag("Player"))
-            {
-                OnPlayerKilled?.Invoke();
-                TimerService.Instance?.ForceExpire();
-            }
-
+            if (!target.TryGetComponent(out Health health)) return;
+            if (health.Kill())
+                OnEntityKilled?.Invoke(target);
         }
     }
 }

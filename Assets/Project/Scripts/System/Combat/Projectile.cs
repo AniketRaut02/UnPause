@@ -8,6 +8,7 @@ namespace DarkPixelGD.Systems.Combat
     {
         [SerializeField] private float _speed = 15f;
         [SerializeField] private float _lifetime = 3f;
+
         private int _damage;
         private string _targetTag; // "Player" or "Enemy" — only this tag takes damage
 
