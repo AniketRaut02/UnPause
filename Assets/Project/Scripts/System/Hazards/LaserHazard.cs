@@ -42,7 +42,7 @@ namespace DarkPixelGD.Systems.Hazard
             _line.SetPosition(1, endPoint);
 
             if (hit.collider != null && hit.collider.CompareTag("Player"))
-                KillPlayer(hit.collider.gameObject);
+                ApplyHazardDamage(hit.collider.gameObject);
         }
     }
 }

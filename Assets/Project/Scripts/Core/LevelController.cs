@@ -61,7 +61,7 @@ namespace DarkPixelGD.Core
         private IEnumerator RespawnWithInvulnerability()
         {
             player.Teleport(_spawnPoint.position);
-            player.SetInvulnerable(true);
+           // player.SetInvulnerable(true);
             TimerService.Instance.StartTimer(config.timerDuration);
 
             yield return new WaitForSecondsRealtime(1f); // unscaled: safe even if paused mid-window

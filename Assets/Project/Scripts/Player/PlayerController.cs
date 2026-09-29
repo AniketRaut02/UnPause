@@ -1,5 +1,6 @@
-using UnityEngine;
+using DarkPixelGD.Systems.Combat;
 using DarkPixelGD.Input;
+using UnityEngine;
 
 
 namespace DarkPixelGD.Player
@@ -11,6 +12,8 @@ namespace DarkPixelGD.Player
         public InputReader _input;
         public PlayerDataSO _data;
 
+        [SerializeField] private Health _health;
+        [SerializeField] private PlayerShooting _shooting;
         // Movement
         private Rigidbody2D _rb;
         private Vector2 _moveInput;
@@ -28,6 +31,8 @@ namespace DarkPixelGD.Player
         public float CurrentSpeed = 0f;
 
         public bool IsInvulnerable { get; private set; }
+
+
 
         private void Awake()
         {
@@ -66,11 +71,13 @@ namespace DarkPixelGD.Player
                 if (_controlsInverted) rawInput = -rawInput;
 
                 _moveInput = rawInput.normalized;
-                if (_moveInput.sqrMagnitude > 0.01f)
-                {
-                    _facingDirection = _moveInput;
-                }
+                
             }
+
+            if (_shooting != null && _shooting.AimDirection.sqrMagnitude > 0.01f)
+                _facingDirection = _shooting.AimDirection;
+            else if (_moveInput.sqrMagnitude > 0.01f)
+                _facingDirection = _moveInput;
         }
 
         private void FixedUpdate()
@@ -136,7 +143,8 @@ namespace DarkPixelGD.Player
 
         public void SetInvulnerable(bool value)
         {
-            IsInvulnerable = value;
+
+            _health.SetInvulnerable(value);
         }
         public void Teleport(Vector3 position)
         {

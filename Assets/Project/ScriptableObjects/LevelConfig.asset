@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
   timerDuration: 60
   startWithDashLocked: 0
-  startWithInvertedControls: 1
-  firstDeathIsFree: 1
+  startWithInvertedControls: 0
+  firstDeathIsFree: 0
   nextSceneName: Test2
