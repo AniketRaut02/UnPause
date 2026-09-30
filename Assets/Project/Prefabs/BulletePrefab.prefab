@@ -266,8 +266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Systems.Combat.Projectile
   _speed: 15
   _lifetime: 3
-  _impactEffectPrefab: {fileID: 0}
-  _hitTrauma: 1
 --- !u!114 &5355093844195613036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0140cf258d5634d81ad9c0e2eb8bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Systems.Combat.BulletTrail
-  _trailDuration: 0.15
+  _trailDuration: 0.25
   _startWidth: 0.08
   _endWidth: 0
