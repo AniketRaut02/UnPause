@@ -16,7 +16,7 @@ MonoBehaviour:
   lines:
   - text: Hey this is Developer.
     voiceClip: {fileID: 0}
-    minDisplayDuration: 2
+    minDisplayDuration: 5
   - text: This is a test Line
     voiceClip: {fileID: 0}
-    minDisplayDuration: 2
+    minDisplayDuration: 5

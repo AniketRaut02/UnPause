@@ -11,27 +11,23 @@ namespace DarkPixelGD.Systems.Manipulation
 
         private MovableObject _selected;
 
-        private void Start()
-        {
-            PauseService.Instance.OnPauseChanged += HandlePauseChanged;
-        }
+        private void Start() => CarveModeController.Instance.OnCarveModeChanged += HandleCarveModeChanged;
+
         private void OnDisable()
         {
-            if (PauseService.Instance != null)
-                PauseService.Instance.OnPauseChanged -= HandlePauseChanged;
+            if (CarveModeController.Instance != null)
+                CarveModeController.Instance.OnCarveModeChanged -= HandleCarveModeChanged;
         }
 
-        private void HandlePauseChanged(bool isPaused)
+        private void HandleCarveModeChanged(bool active)
         {
             foreach (var movable in MovableObjectRegistry.All)
-                movable.SetHighlighted(isPaused);
-
-            if (!isPaused) Deselect();
+                movable.SetHighlighted(active);
+            if (!active) Deselect();
         }
-
         private void Update()
         {
-            if (PauseService.Instance == null || !PauseService.Instance.IsPaused) return;
+            if (CarveModeController.Instance == null || !CarveModeController.Instance.IsCarveModeActive) return;
 
             if (Mouse.current == null || !Mouse.current.leftButton.wasPressedThisFrame) return;
 

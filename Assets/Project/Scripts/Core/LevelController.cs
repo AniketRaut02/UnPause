@@ -41,7 +41,7 @@ namespace DarkPixelGD.Core
 
         private void HandleLevelComplete()
         {
-            PauseService.Instance.SetPaused(false);
+            PauseService.Instance.ReleasePause();
             if (!string.IsNullOrEmpty(config.nextSceneName))
                 SceneLoader.Instance.LoadScene(config.nextSceneName);
             else
@@ -50,7 +50,7 @@ namespace DarkPixelGD.Core
 
         private void HandleTimerExpired()
         {
-            PauseService.Instance.SetPaused(false);
+            PauseService.Instance.ReleasePause();
 
             if (config.firstDeathIsFree && !_hasUsedFreeDeath)
             {

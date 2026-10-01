@@ -1,3 +1,4 @@
+using DarkPixelGD.Audio;
 using DarkPixelGD.Combat;
 using DarkPixelGD.Systems.Combat;
 using System.Collections;
@@ -17,6 +18,10 @@ namespace DarkPixelGD.Enemy
         [SerializeField] private GunFireAnimator _gunAnimator;
         [SerializeField] private MuzzleFlash _muzzleFlash;
 
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _fireSound;
+
         private void Start() => StartCoroutine(FireLoop());
 
         private IEnumerator FireLoop()
@@ -35,6 +40,7 @@ namespace DarkPixelGD.Enemy
             bullet.GetComponent<Projectile>().Initialize(damage, "Player");
             _gunAnimator.PlayFire();
             _muzzleFlash.Flash();
+            _audioChannel.RaisePlaySound(_fireSound, transform.position);
         }
     }
 }

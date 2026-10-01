@@ -24,6 +24,8 @@ namespace DarkPixelGD.Input
         public event Action PreviousEvent;
 
         public event Action PauseEvent;
+        public event Action OpenMenuEvent;
+
 
         public void Initialize()
         {
@@ -104,6 +106,10 @@ namespace DarkPixelGD.Input
         public void OnPause(InputAction.CallbackContext ctx)
         {
             if (ctx.performed) { PauseEvent?.Invoke(); }
+        }
+        public void OnOpenMenu(InputAction.CallbackContext ctx)
+        {
+            if (ctx.performed) { OpenMenuEvent.Invoke(); }
         }
 
 

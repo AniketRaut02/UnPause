@@ -1,4 +1,3 @@
-using DarkPixelGD.Input;
 using System;
 using UnityEngine;
 
@@ -8,7 +7,7 @@ public class PauseService : MonoBehaviour
     public bool IsPaused { get; private set; }
     public event Action<bool> OnPauseChanged;
 
-    [SerializeField] private InputReader inputReader;
+    private int _pauseRequests;
 
     private void Awake()
     {
@@ -16,15 +15,23 @@ public class PauseService : MonoBehaviour
         Instance = this;
     }
 
-    private void OnEnable() => inputReader.PauseEvent += TogglePause;
-    private void OnDisable() => inputReader.PauseEvent -= TogglePause;
+    public void RequestPause() { _pauseRequests++; Refresh(); }
+    public void ReleasePause() { _pauseRequests = Mathf.Max(0, _pauseRequests - 1); Refresh(); }
 
-    public void TogglePause() => SetPaused(!IsPaused);
-
-    public void SetPaused(bool paused)
+    // Used only by death/level-transition flows — guarantees a clean state regardless
+    // of how many things thought they had a pause request open.
+    public void ForceUnpause()
     {
-        IsPaused = paused;
-        Time.timeScale = paused ? 0f : 1f;
-        OnPauseChanged?.Invoke(paused);
+        _pauseRequests = 0;
+        Refresh();
+    }
+
+    private void Refresh()
+    {
+        bool shouldBePaused = _pauseRequests > 0;
+        if (shouldBePaused == IsPaused) return;
+        IsPaused = shouldBePaused;
+        Time.timeScale = IsPaused ? 0f : 1f;
+        OnPauseChanged?.Invoke(IsPaused);
     }
 }

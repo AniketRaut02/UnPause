@@ -42,7 +42,7 @@
                     "id": "852140f2-7766-474d-8707-702459ba45f3",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
                 },
@@ -100,6 +100,16 @@
                     "name": "Pause",
                     "type": "Button",
                     "id": "a74ba5a0-ce61-4ecf-8b35-86c3960a3859",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "OpenMenu",
+                    "type": "Button",
+                    "id": "60697bf1-929b-4ed6-b0eb-e5c063933a8b",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -512,6 +522,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a0fc5e9-a551-49ee-9350-fd14daa4a3c3",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "OpenMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
