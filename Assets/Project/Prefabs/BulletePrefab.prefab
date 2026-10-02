@@ -266,6 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Systems.Combat.Projectile
   _speed: 15
   _lifetime: 3
+  _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
+  _hitSound: {fileID: 11400000, guid: ab469fb5ac2321f40990ad7f3d9585a7, type: 2}
+  _juiceChannel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}
+  _damageJuiceProfile: {fileID: 11400000, guid: 3fd70b68a2d9a39438b4bb68d9a1174b, type: 2}
 --- !u!114 &5355093844195613036
 MonoBehaviour:
   m_ObjectHideFlags: 0

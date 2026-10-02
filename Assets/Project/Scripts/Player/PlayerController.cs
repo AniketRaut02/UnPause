@@ -1,5 +1,7 @@
-using DarkPixelGD.Systems.Combat;
+using DarkPixelGD.Audio;
 using DarkPixelGD.Input;
+using DarkPixelGD.Juice;
+using DarkPixelGD.Systems.Combat;
 using UnityEngine;
 
 
@@ -14,6 +16,15 @@ namespace DarkPixelGD.Player
 
         [SerializeField] private Health _health;
         [SerializeField] private PlayerShooting _shooting;
+
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _dashSound;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _dashJuiceProfile;
+
         // Movement
         private Rigidbody2D _rb;
         private Vector2 _moveInput;
@@ -125,6 +136,10 @@ namespace DarkPixelGD.Player
 
             Vector2 dashDirection = _moveInput.sqrMagnitude > 0.01f ? _moveInput : _facingDirection;
             _rb.linearVelocity = dashDirection * _data.dashBurstSpeed;
+
+            if (_juiceChannel != null && _dashJuiceProfile != null) {     _juiceChannel.RaiseJuice(_dashJuiceProfile, transform.position);  }
+            if (_audioChannel != null && _dashSound != null) { _audioChannel.RaisePlaySound(_dashSound, transform.position); }
+            
         }
 
         private void EndDash()

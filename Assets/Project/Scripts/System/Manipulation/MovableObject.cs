@@ -1,3 +1,5 @@
+using DarkPixelGD.Audio;
+using DarkPixelGD.Juice;
 using UnityEngine;
 
 namespace DarkPixelGD.Systems.Manipulation
@@ -32,6 +34,17 @@ namespace DarkPixelGD.Systems.Manipulation
         [SerializeField] private Color _highlightColor = Color.yellow;
         [SerializeField] private Color _selectedColor = Color.green;
 
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _rotateSoundSO;
+        [SerializeField] private SoundDataSO _moveSoundSO;
+        [SerializeField] private SoundDataSO _selectedSoundSO;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _rotateJuiceProfile;
+        [SerializeField] private JuiceProfileSO _moveJuiceProfile;
+
         private Color _baseColor;
         private float _currentAngle;
         private float _currentOffset;
@@ -57,6 +70,8 @@ namespace DarkPixelGD.Systems.Manipulation
             if (!_canRotate) return;
             _currentAngle = Mathf.Clamp(_currentAngle + direction * _rotationStep, _minAngle, _maxAngle);
             transform.rotation = Quaternion.Euler(0, 0, _currentAngle);
+            if (_audioChannel != null && _rotateSoundSO != null) { _audioChannel.RaisePlaySound(_rotateSoundSO, transform.position); }
+            if (_juiceChannel != null && _rotateJuiceProfile != null) _juiceChannel.RaiseJuice(_rotateJuiceProfile, transform.position);
         }
 
         public void Move(int direction)
@@ -64,6 +79,8 @@ namespace DarkPixelGD.Systems.Manipulation
             if (!_canMove) return;
             _currentOffset = Mathf.Clamp(_currentOffset + direction * _moveStep, _minOffset, _maxOffset);
             transform.position = _startPosition + (Vector3)(_moveAxis.normalized * _currentOffset);
+            if (_audioChannel != null && _moveSoundSO != null) { _audioChannel.RaisePlaySound(_moveSoundSO, transform.position); }
+            if (_juiceChannel != null && _moveJuiceProfile != null) _juiceChannel.RaiseJuice(_moveJuiceProfile, transform.position);
         }
 
         public void SetHighlighted(bool on)
@@ -76,6 +93,7 @@ namespace DarkPixelGD.Systems.Manipulation
         {
             _isSelected = on;
             RefreshColor();
+            if (_audioChannel != null && _selectedSoundSO != null) { _audioChannel.RaisePlaySound(_selectedSoundSO, transform.position); }
         }
 
         private void RefreshColor()

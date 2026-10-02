@@ -1,7 +1,8 @@
+using DarkPixelGD.Audio;
+using DarkPixelGD.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DarkPixelGD.Core;
 
 namespace DarkPixelGD.UI
 {
@@ -16,6 +17,11 @@ namespace DarkPixelGD.UI
         [SerializeField] private Color _normalColor = Color.white;
         [SerializeField] private Color _warningColor = Color.red;
         [SerializeField] private Animator _animator; // optional — for a pulse clip, see below
+
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _timerTickSound;
+        [SerializeField] private Transform playerTransform;
 
         private static readonly int _pulseHash = Animator.StringToHash("Pulse");
         private bool _warningActive;
@@ -45,9 +51,12 @@ namespace DarkPixelGD.UI
                 Color target = shouldWarn ? _warningColor : _normalColor;
                 _timeLabel.color = target;
                 _icon.color = target;
-
+                if (_audioChannel != null && _timerTickSound != null) { _audioChannel.RaisePlaySound(_timerTickSound, playerTransform.position); }
                 if (shouldWarn && _animator != null)
+                {
                     _animator.SetTrigger(_pulseHash); // one-shot punch/scale clip, same Animator-owns-motion pattern as your gun
+                }
+                  
             }
         }
     }

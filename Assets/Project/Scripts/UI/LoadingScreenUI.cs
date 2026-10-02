@@ -26,7 +26,7 @@ namespace DarkPixelGD.UI
         public IEnumerator FadeOut() // black screen appears
         {
             _canvasGroup.blocksRaycasts = true;
-            yield return Fade(0.3f, 1f);
+            yield return Fade(0.8f, 1f);
         }
 
         public IEnumerator FadeIn() // black screen clears

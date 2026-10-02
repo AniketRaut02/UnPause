@@ -1,4 +1,5 @@
 using DarkPixelGD.Interaction;
+using DarkPixelGD.Juice;
 using DarkPixelGD.Player;
 using DarkPixelGD.UI;
 using System.Collections;
@@ -18,6 +19,10 @@ namespace DarkPixelGD.Core
         [Header("Explosion")]
         [SerializeField] private GameObject _explosionPrefab;
         [SerializeField] private float _explosionDelayBeforeFade = 0.5f;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _explosionJuiceProfile;
         private bool _hasUsedFreeDeath;
 
         private void Start()
@@ -67,7 +72,9 @@ namespace DarkPixelGD.Core
             if (_explosionPrefab != null)
                 Instantiate(_explosionPrefab, player.transform.position, Quaternion.identity);
 
-            yield return new WaitForSecondsRealtime(_explosionDelayBeforeFade); // unscaled: stays consistent even mid-pause
+            _juiceChannel.RaiseJuice(_explosionJuiceProfile, player.transform.position);
+
+            yield return new WaitForSecondsRealtime(_explosionDelayBeforeFade);
             SceneLoader.Instance.LoadScene(SceneManager.GetActiveScene().name);
         }
         private IEnumerator RespawnWithInvulnerability()
@@ -79,5 +86,6 @@ namespace DarkPixelGD.Core
             yield return new WaitForSecondsRealtime(1f); // unscaled: safe even if paused mid-window
             player.SetInvulnerable(false);
         }
+
     }
 }

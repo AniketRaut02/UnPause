@@ -1,4 +1,6 @@
+using DarkPixelGD.Audio;
 using DarkPixelGD.Combat;
+using DarkPixelGD.Juice;
 using DarkPixelGD.Systems.Combat;
 using DarkPixelGD.VFX;
 using UnityEngine;
@@ -10,6 +12,7 @@ namespace DarkPixelGD.Player
     {
         [SerializeField] private Transform _aimPivot;  
         [SerializeField] private Transform _muzzle;
+        [SerializeField] private Transform _shootJuicePoint;
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private int _minDamage = 15;
         [SerializeField] private int _maxDamage = 30;
@@ -23,6 +26,14 @@ namespace DarkPixelGD.Player
         [Header("Animator Refrences")]
         [SerializeField] private GunFireAnimator _gunAnimator;
         [SerializeField] private MuzzleFlash _muzzleFlash;
+
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _fireSound;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _fireJuiceProfile;
 
 
         public Vector2 AimDirection { get; private set; }
@@ -60,6 +71,8 @@ namespace DarkPixelGD.Player
             bullet.GetComponent<Projectile>().Initialize(damage, "Enemy");
             _gunAnimator.PlayFire();
             _muzzleFlash.Flash();
+            if (_audioChannel != null && _fireSound != null) { _audioChannel.RaisePlaySound(_fireSound, transform.position); }
+            if(_juiceChannel!=null && _fireJuiceProfile!=null)_juiceChannel.RaiseJuice(_fireJuiceProfile, _shootJuicePoint.transform.position);
         }
 
 

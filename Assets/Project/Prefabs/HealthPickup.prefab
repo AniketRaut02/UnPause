@@ -143,3 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Systems.Combat.HealthPickup
   _healAmount: 20
+  _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
+  _healthPickupSoundSO: {fileID: 11400000, guid: 1332f2056870143479e42e864f2eb4e8, type: 2}
+  _juiceChannel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}
+  _healthPickupJuiceProfile: {fileID: 11400000, guid: d548bd35dbd211243b6067ffa3bbc20b, type: 2}

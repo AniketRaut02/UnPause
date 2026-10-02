@@ -6,6 +6,7 @@ public class CarveModeController : MonoBehaviour
 {
     public static CarveModeController Instance { get; private set; }
     [SerializeField] private InputReader _inputReader;
+    [SerializeField] private GameObject _overlayPanel;
 
     public bool IsCarveModeActive { get; private set; }
     public event Action<bool> OnCarveModeChanged;
@@ -30,6 +31,7 @@ public class CarveModeController : MonoBehaviour
     {
         if (active == IsCarveModeActive) return;
         IsCarveModeActive = active;
+        _overlayPanel.SetActive(active);
         if (active) PauseService.Instance.RequestPause();
         else PauseService.Instance.ReleasePause();
         OnCarveModeChanged?.Invoke(active);

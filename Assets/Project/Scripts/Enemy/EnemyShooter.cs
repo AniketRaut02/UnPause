@@ -1,5 +1,6 @@
 using DarkPixelGD.Audio;
 using DarkPixelGD.Combat;
+using DarkPixelGD.Juice;
 using DarkPixelGD.Systems.Combat;
 using System.Collections;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace DarkPixelGD.Enemy
     public class EnemyShooter : MonoBehaviour
     {
         [SerializeField] private Transform _muzzle;
+        [SerializeField] private Transform _shootJuicePoint;
         [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private float _fireInterval = 1.5f;
         [SerializeField] private int _minDamage = 5;
@@ -21,6 +23,10 @@ namespace DarkPixelGD.Enemy
         [Header("Audio")]
         [SerializeField] private AudioEventChannelSO _audioChannel;
         [SerializeField] private SoundDataSO _fireSound;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _fireJuiceProfile;
 
         private void Start() => StartCoroutine(FireLoop());
 
@@ -40,7 +46,8 @@ namespace DarkPixelGD.Enemy
             bullet.GetComponent<Projectile>().Initialize(damage, "Player");
             _gunAnimator.PlayFire();
             _muzzleFlash.Flash();
-            _audioChannel.RaisePlaySound(_fireSound, transform.position);
+            if(_audioChannel!=null && _fireSound!=null)_audioChannel.RaisePlaySound(_fireSound, transform.position);
+            if (_juiceChannel != null && _fireJuiceProfile != null) _juiceChannel.RaiseJuice(_fireJuiceProfile,_shootJuicePoint.position);
         }
     }
 }

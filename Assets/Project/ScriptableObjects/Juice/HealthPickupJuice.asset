@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 140f17e5766fd9247a054b5361a7a0b1, type: 3}
+  m_Name: HealthPickupJuice
+  m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Juice.JuiceProfileSO
+  impulseVelocity: {x: 0.3, y: 0.3, z: 0}
+  shakeForce: 0.5
+  useLightFlash: 1
+  lightColor: {r: 0.3457097, g: 1, b: 0.2471698, a: 1}
+  lightSprite: {fileID: 21300000, guid: 9922d727f0e39b145a44955be2d33687, type: 3}
+  lightIntensity: 3
+  lightRadius: 2
+  lightDuration: 0.08

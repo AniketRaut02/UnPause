@@ -1,3 +1,5 @@
+using DarkPixelGD.Audio;
+using DarkPixelGD.Juice;
 using DarkPixelGD.Player;
 using DarkPixelGD.Systems.Combat;
 using UnityEngine;
@@ -16,6 +18,14 @@ namespace DarkPixelGD.Enemy
         [SerializeField] private bool _dropsHealthPickup = false;
         [SerializeField] private GameObject _healthPickupPrefab;
 
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _deathSoundSO;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _deathJuiceProfile;
+
         private void OnEnable() => _health.OnDeath += HandleDeath;
         private void OnDisable() => _health.OnDeath -= HandleDeath;
 
@@ -31,6 +41,8 @@ namespace DarkPixelGD.Enemy
             if (_rb != null) _rb.linearVelocity = Vector2.zero;
             if (_controller != null) _controller.enabled = false;
             if (_shooting != null) _shooting.enabled = false;
+            if (_audioChannel != null && _deathSoundSO != null) { _audioChannel.RaisePlaySound(_deathSoundSO, transform.position); }
+            if (_juiceChannel != null && _deathJuiceProfile != null) _juiceChannel.RaiseJuice(_deathJuiceProfile,transform.position);
 
             if (_dropsHealthPickup && _healthPickupPrefab != null)
                 Instantiate(_healthPickupPrefab, transform.position, Quaternion.identity);

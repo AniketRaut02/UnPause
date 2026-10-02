@@ -33,12 +33,15 @@ public class OptionsMenuUI : MonoBehaviour
         _resolutionDropdown.ClearOptions();
         _resolutionDropdown.AddOptions(options);
         _resolutionDropdown.SetValueWithoutNotify(_settings.resolutionIndex);
+
+        var currentRes = _resolutions[_settings.resolutionIndex];
+        Screen.SetResolution(currentRes.width, currentRes.height, Screen.fullScreen);
     }
 
     // Hook to each control's OnValueChanged in the Inspector
     public void OnMusicChanged() { _settings.musicVolume = _musicSlider.value; ApplyAudio(); }
     public void OnSfxChanged() { _settings.sfxVolume = _sfxSlider.value; ApplyAudio(); }
-    public void OnSensitivityChanged() => _settings.mouseSensitivity = _sensitivitySlider.value;
+    public void OnSensitivityChanged() { _settings.mouseSensitivity = _sensitivitySlider.value; _settings.NotifyChanged(); }
 
     public void OnNarratorChanged() { _settings.narratorVolume = _narratorSlider.value; ApplyAudio(); }
 

@@ -1,3 +1,4 @@
+using DarkPixelGD.Audio;
 using UnityEngine;
 
 namespace DarkPixelGD.Systems.Hazard
@@ -10,10 +11,21 @@ namespace DarkPixelGD.Systems.Hazard
         [SerializeField] private LayerMask _hitMask; // must include Player AND Movable/Wall layers
         [SerializeField] private float _rotationSpeed = 0f; // degrees/sec; 0 = static beam
 
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _laserSoundSO;
+
 
         private LineRenderer _line;
 
-        private void Awake() => _line = GetComponent<LineRenderer>();
+        private void Awake()
+        {
+            _line = GetComponent<LineRenderer>();
+            if(_audioChannel!=null && _laserSoundSO != null)
+            {
+                _audioChannel.RaisePlaySound(_laserSoundSO, transform.position);
+            }
+        }
 
 
         private void FixedUpdate()

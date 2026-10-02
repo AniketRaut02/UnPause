@@ -1,3 +1,5 @@
+using DarkPixelGD.Audio;
+using DarkPixelGD.Juice;
 using DarkPixelGD.Systems.Combat;
 using DarkPixelGD.Systems.Manipulation;
 using UnityEngine;
@@ -8,6 +10,15 @@ namespace DarkPixelGD.Systems.Combat
     {
         [SerializeField] private float _speed = 15f;
         [SerializeField] private float _lifetime = 3f;
+
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _hitSound;
+
+        [Header("Juice Refrences")]
+        [SerializeField] private JuiceEventChannelSO _juiceChannel;
+        [SerializeField] private JuiceProfileSO _damageJuiceProfile;
+
 
         private int _damage;
         private string _targetTag; // "Player" or "Enemy" — only this tag takes damage
@@ -29,6 +40,8 @@ namespace DarkPixelGD.Systems.Combat
             if (other.CompareTag(_targetTag) && other.TryGetComponent(out Health health))
             {
                 health.TakeDamage(_damage);
+                if (_audioChannel != null && _hitSound != null) { _audioChannel.RaisePlaySound(_hitSound, transform.position); }
+                if (_juiceChannel!=null&&_damageJuiceProfile!=null) _juiceChannel.RaiseJuice(_damageJuiceProfile, transform.position);
                 Destroy(gameObject);
             }
             else if (other.GetComponent<MovableObject>() != null)
