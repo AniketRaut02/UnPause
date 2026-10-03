@@ -1,0 +1,21 @@
+LICENSE
+
+You can:
+- Use in personal and commercial projects
+- Modify the assets to fit your project
+- Use on any platform
+
+You can't:
+- Redistribute the original or modified asset files
+- Resell the assets as standalone content
+- Include the assets in another asset pack
+- Upload the assets to marketplaces or public repositories
+- Use the assets to train AI or machine learning models
+
+No attribution required.
+
+This license covers one individual user or one studio/team.
+
+Questions or issues?
+Contact via the itch.io page:
+https://unchinth.itch.io/

@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: StoryData
+  m_EditorClassIdentifier: Assembly-CSharp:DarkPixelGD.Story:StoryDataSO
+  pages:
+  - text: 'Developer''s Note:
+
+      The game is finally almost finished.
+
+      Five
+      levels.
+
+      One protagonist.
+
+      One ending.
+
+'
+    holdDurationAfterTyping: 5
+  - text: 'I''ve spent months building this world.
+
+      Every room.
+
+      Every
+      obstacle.
+
+      Every rule.
+
+      Everything works exactly the way I designed
+      it.'
+    holdDurationAfterTyping: 5
+  - text: 'Well...
+
+
+      Mostly.'
+    holdDurationAfterTyping: 5
+  - text: 'There''s still one problem.
+
+      The protagonist!!!'
+    holdDurationAfterTyping: 5
+  - text: 'She''s been acting strangely lately.
+
+      Sometimes she''ll stop moving.
+
+      Sometimes
+      she''ll stare directly at the camera.
+
+      And yesterday...
+
+      she said
+      something.'
+    holdDurationAfterTyping: 5
+  - text: 'She''s been acting strangely lately.
+
+      Sometimes she''ll stop moving.
+
+      Sometimes
+      she''ll stare directly at the camera.
+
+      And yesterday...
+
+      she said
+      something.'
+    holdDurationAfterTyping: 5
+  - text: '"Do you ever wonder what it feels like to be me?"'
+    holdDurationAfterTyping: 5
+  - text: 'I thought it was a bug.
+
+      I was wrong..........'
+    holdDurationAfterTyping: 5
