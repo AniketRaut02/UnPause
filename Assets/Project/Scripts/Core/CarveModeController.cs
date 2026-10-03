@@ -1,6 +1,7 @@
+using DarkPixelGD.Input;
+using DarkPixelGD.Tutorial;
 using System;
 using UnityEngine;
-using DarkPixelGD.Input;
 
 public class CarveModeController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class CarveModeController : MonoBehaviour
     public void ToggleCarveMode()
     {
         if (PauseMenuController.Instance != null && PauseMenuController.Instance.IsMenuOpen) return;
+        if (TutorialPromptManager.Instance != null && TutorialPromptManager.Instance.IsShowingPrompt) return;
         SetCarveMode(!IsCarveModeActive);
     }
 

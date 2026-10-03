@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerShootJuice
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Juice.JuiceProfileSO
   impulseVelocity: {x: 0.3, y: 0.3, z: 0}
-  shakeForce: 0.2
+  shakeForce: 0.3
   useLightFlash: 1
   lightColor: {r: 0.9686275, g: 0.8705883, b: 0.3019608, a: 1}
   lightSprite: {fileID: 21300000, guid: 9922d727f0e39b145a44955be2d33687, type: 3}

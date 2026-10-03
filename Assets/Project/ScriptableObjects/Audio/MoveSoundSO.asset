@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0d066d8195b0db40a53d145330c27c6, type: 3}
   m_Name: MoveSoundSO
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Audio.SoundDataSO
-  clips: []
-  mixerGroup: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 5a0da8164abcff4418558157f1870782, type: 3}
+  mixerGroup: {fileID: -3260874455937307460, guid: 84639db89652a3744854d652bf8b8bb2, type: 2}
   volume: 1
   volumeVariance: 0.05
   pitchMin: 0.95

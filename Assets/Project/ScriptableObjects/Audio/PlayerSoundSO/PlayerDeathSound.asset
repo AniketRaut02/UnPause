@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDeathSound
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Audio.SoundDataSO
   clips:
-  - {fileID: 8300000, guid: 9a1bba84105db1845899659ebb7530f2, type: 3}
+  - {fileID: 8300000, guid: 1d510599cc5f09b4298e055f1a07b5e4, type: 3}
   mixerGroup: {fileID: -3260874455937307460, guid: 84639db89652a3744854d652bf8b8bb2, type: 2}
   volume: 1
   volumeVariance: 0.05

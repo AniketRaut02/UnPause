@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PlayerShootSound
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Audio.SoundDataSO
   clips:
-  - {fileID: 8300000, guid: 9a1bba84105db1845899659ebb7530f2, type: 3}
+  - {fileID: 8300000, guid: 7f53d6ce5db3b3c49beb4d4947f6327d, type: 3}
   mixerGroup: {fileID: -3260874455937307460, guid: 84639db89652a3744854d652bf8b8bb2, type: 2}
   volume: 1
-  volumeVariance: 0.05
-  pitchMin: 0.95
-  pitchMax: 1.05
+  volumeVariance: 0.083
+  pitchMin: 0.85
+  pitchMax: 1.15
   spatialBlend: 1
   loop: 0

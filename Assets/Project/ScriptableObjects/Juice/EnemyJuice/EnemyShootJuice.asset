@@ -15,8 +15,8 @@ MonoBehaviour:
   impulseVelocity: {x: 0.3, y: 0.3, z: 0}
   shakeForce: 0.4
   useLightFlash: 1
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
-  lightSprite: {fileID: 0}
+  lightColor: {r: 0.96470594, g: 0.8705883, b: 0.3019608, a: 1}
+  lightSprite: {fileID: 21300000, guid: cec7f0489bfa015499ed2f16c2a77860, type: 3}
   lightIntensity: 3
   lightRadius: 2
   lightDuration: 0.08

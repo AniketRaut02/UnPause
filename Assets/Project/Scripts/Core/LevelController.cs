@@ -31,6 +31,7 @@ namespace DarkPixelGD.Core
                 player.SetDashLocked(true);
             if (config.startWithInvertedControls)
                 player.SetControlsInverted(true);
+            player.SetHasKey(false);
 
             portal.OnLevelComplete += HandleLevelComplete;
             TimerService.Instance.OnTimerExpired += HandleTimerExpired;

@@ -46,6 +46,10 @@ namespace DarkPixelGD.Player
         public Health Health => _health;
 
 
+        //Portal Key Logic
+        private bool _hasKey;
+        public bool HasKey => _hasKey;
+
 
         private void Awake()
         {
@@ -168,5 +172,7 @@ namespace DarkPixelGD.Player
             _rb.linearVelocity = Vector2.zero;
             transform.position = position;
         }
+
+        public void SetHasKey(bool value) => _hasKey = value;
     }
 }

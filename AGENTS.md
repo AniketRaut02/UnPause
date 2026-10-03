@@ -2,7 +2,7 @@
 - Project name: UnPause
 - Unity version: Unity 6000.5.8f1
 - Active game object:
-  - Name: ManupulationHUD
-  - Tag: Untagged
-  - Layer: UI
+  - Name: Enemy
+  - Tag: Enemy
+  - Layer: Enemy
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

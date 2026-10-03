@@ -17,6 +17,6 @@ MonoBehaviour:
   useLightFlash: 1
   lightColor: {r: 0.3457097, g: 1, b: 0.2471698, a: 1}
   lightSprite: {fileID: 21300000, guid: 9922d727f0e39b145a44955be2d33687, type: 3}
-  lightIntensity: 3
+  lightIntensity: 6
   lightRadius: 2
   lightDuration: 0.08
