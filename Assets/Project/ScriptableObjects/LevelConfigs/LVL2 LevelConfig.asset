@@ -16,4 +16,4 @@ MonoBehaviour:
   startWithDashLocked: 1
   startWithInvertedControls: 0
   firstDeathIsFree: 0
-  nextSceneName: Test1
+  nextSceneName: Level3

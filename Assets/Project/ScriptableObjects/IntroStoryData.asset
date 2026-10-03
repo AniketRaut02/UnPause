@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32101ee2a63fba642a74fdcb0e93391b, type: 3}
+  m_Name: IntroStoryData
+  m_EditorClassIdentifier: Assembly-CSharp:DarkPixelGD.Story:StoryDataSO
+  pages:
+  - text: "[BUILD 0.9.7 \u2014 DEVELOPMENT MODE]\nDeveloper's Note:\nThe game is
+      finally almost finished."
+    holdDurationAfterTyping: 2
+  - text: 'Five levels.
+
+      One protagonist.
+
+      One ending.'
+    holdDurationAfterTyping: 2
+  - text: 'I''ve spent months building this world.
+
+      Every room.
+
+      Every
+      obstacle.
+
+      Every rule.
+
+      Everything works exactly the way I designed
+      it.'
+    holdDurationAfterTyping: 2
+  - text: 'Well...
+
+      Mostly.'
+    holdDurationAfterTyping: 2
+  - text: 'There''s still one problem.
+
+      The protagonist.'
+    holdDurationAfterTyping: 2
+  - text: 'She''s been acting strangely lately.
+
+      Sometimes she''ll stop moving.
+
+      Sometimes
+      she''ll stare directly at the camera.'
+    holdDurationAfterTyping: 2
+  - text: 'And yesterday...
+
+      she said something.'
+    holdDurationAfterTyping: 2
+  - text: '"Do you ever wonder what it feels like to be me?"'
+    holdDurationAfterTyping: 2
+  - text: I thought it was a bug.
+    holdDurationAfterTyping: 2
+  - text: I was Wrong!!
+    holdDurationAfterTyping: 2
+  - text: 'To find out the bugs i decided to give the game a playtest.
+
+'
+    holdDurationAfterTyping: 2
+  - text: Here we go
+    holdDurationAfterTyping: 2

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Tutorial.TutorialPromptDataSO
   title: Dash
   message: '[SPACE]+[Cursor Location]- DASH'
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: e4fd1d0fa67401647b3a635431e12a06, type: 3}

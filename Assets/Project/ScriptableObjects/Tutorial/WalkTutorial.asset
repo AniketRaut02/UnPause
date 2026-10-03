@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Tutorial.TutorialPromptDataSO
   title: Walk
   message: WASD - WALK
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 5ab935ff81724e84c9d8c7fa95b53a10, type: 3}

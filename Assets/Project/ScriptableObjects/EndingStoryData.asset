@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32101ee2a63fba642a74fdcb0e93391b, type: 3}
+  m_Name: EndingStoryData
+  m_EditorClassIdentifier: Assembly-CSharp:DarkPixelGD.Story:StoryDataSO
+  pages:
+  - text: 'And somehow...
+
+      "I was the one who ended up getting tested."'
+    holdDurationAfterTyping: 2
+  - text: 'But I fought through and I escaped. '
+    holdDurationAfterTyping: 2
+  - text: 'I used to think making a game was about controlling everything.
+
+      The
+      character.
+
+      The world.
+
+      The rules.
+
+      The outcome.'
+    holdDurationAfterTyping: 2
+  - text: 'But somewhere along the way...
+
+      I forgot something.'
+    holdDurationAfterTyping: 2
+  - text: A character doesn't know she's a character.
+    holdDurationAfterTyping: 2
+  - text: 'To her...
+
+      That world is everything.'
+    holdDurationAfterTyping: 2
+  - text: 'Every time she failed...
+
+      That was real.'
+    holdDurationAfterTyping: 2
+  - text: 'And I kept pressing restart
+
+      Again
+
+      And again
+
+      And again.
+
+'
+    holdDurationAfterTyping: 2
+  - text: 'I thought I was building a game.
+
+      But maybe...
+
+      I was just
+      teaching her how to become better at surviving me.'
+    holdDurationAfterTyping: 2
+  - text: 'I don''t know if she was ever really alive.
+
+      Maybe she wasn''t.
+
+      Maybe
+      this was just a bug.'
+    holdDurationAfterTyping: 2
+  - text: But if there's one thing I learned..
+    holdDurationAfterTyping: 2
+  - text: You can't give someone a world and expect them to never question its rules.
+    holdDurationAfterTyping: 2
+  - text: I'm sorry.
+    holdDurationAfterTyping: 2

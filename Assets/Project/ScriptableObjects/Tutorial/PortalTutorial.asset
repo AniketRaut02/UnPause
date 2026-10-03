@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81edf8eb0a759a444aa4d3357b26debb, type: 3}
   m_Name: PortalTutorial
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Tutorial.TutorialPromptDataSO
-  title: Walk
+  title: Portal
   message: 'Obtain the portal Key.
 
     Use the key to activate Portal.'
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ef3fef7399e11314cb1f8f2180f84266, type: 3}

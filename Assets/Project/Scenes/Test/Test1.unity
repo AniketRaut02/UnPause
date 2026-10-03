@@ -1500,7 +1500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &397874854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3395,6 +3395,8 @@ MonoBehaviour:
   _muzzle: {fileID: 833075547}
   _shootJuicePoint: {fileID: 2082460060}
   _bulletPrefab: {fileID: 5013431130854879096, guid: d276afa392707ec46ad635c90803bd58, type: 3}
+  _player: {fileID: 0}
+  _shootRange: 6
   _fireInterval: 1.5
   _minDamage: 5
   _maxDamage: 15
@@ -6213,7 +6215,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3489108230604514562, guid: 456ce63d133b8214483808516ebd01ee, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 991ff11b4396d654caa37c8b39cded7a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6353,7 +6355,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 1.8125}
+    oldSize: {x: 0.875, y: 1.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6472,7 +6474,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.375, y: 1.8125}
+    oldSize: {x: 0.875, y: 1.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
