@@ -4,6 +4,7 @@ using DarkPixelGD.Juice;
 using DarkPixelGD.Systems.Combat;
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace DarkPixelGD.Enemy
 {
@@ -12,6 +13,8 @@ namespace DarkPixelGD.Enemy
         [SerializeField] private Transform _muzzle;
         [SerializeField] private Transform _shootJuicePoint;
         [SerializeField] private GameObject _bulletPrefab;
+        [SerializeField] private Transform _player;
+        [SerializeField] private float _shootRange = 6f;
         [SerializeField] private float _fireInterval = 1.5f;
         [SerializeField] private int _minDamage = 5;
         [SerializeField] private int _maxDamage = 15;
@@ -35,10 +38,16 @@ namespace DarkPixelGD.Enemy
             while (true)
             {
                 yield return new WaitForSeconds(_fireInterval); // scaled: pauses automatically
-                Fire();
+                if(IsPlayerInRange())Fire();
             }
         }
 
+        private bool IsPlayerInRange()
+        {
+            if (_player == null) return false;
+            float sqrDist = (_player.position - transform.position).sqrMagnitude;
+            return sqrDist <= _shootRange * _shootRange; // sqrMagnitude avoids a sqrt per check
+        }
         private void Fire()
         {
             var bullet = Instantiate(_bulletPrefab, _muzzle.position, _muzzle.rotation);

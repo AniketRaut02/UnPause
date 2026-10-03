@@ -28,12 +28,21 @@ namespace DarkPixelGD.Systems.Orb
             if (_effect == OrbEffect.UnlockDash)
             {
                 if (other.TryGetComponent(out PlayerController controller))
+                {
                     controller.SetDashLocked(false);
+                    HintPopupUI.Instance.Show("Dash ability restored!");
+                }
+                    
+                
             }
             else
             {
                 if (other.TryGetComponent(out PlayerController controller))
+                {
                     controller.SetControlsInverted(false);
+                    HintPopupUI.Instance.Show("Dash ability restored!");
+                }
+
             }
 
             gameObject.SetActive(false); // placeholder pickup; swap for VFX/pool later

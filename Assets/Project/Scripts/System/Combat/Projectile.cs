@@ -48,6 +48,10 @@ namespace DarkPixelGD.Systems.Combat
             {
                 Destroy(gameObject); // blocked by manipulable walls, same physics-first principle as your lasers
             }
+            else if (other.CompareTag("Wall"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

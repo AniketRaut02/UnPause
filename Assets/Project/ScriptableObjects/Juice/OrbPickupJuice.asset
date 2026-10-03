@@ -19,4 +19,4 @@ MonoBehaviour:
   lightSprite: {fileID: 21300000, guid: 9922d727f0e39b145a44955be2d33687, type: 3}
   lightIntensity: 5
   lightRadius: 3
-  lightDuration: 1
+  lightDuration: 0.2
