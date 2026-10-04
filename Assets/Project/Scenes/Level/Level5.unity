@@ -7592,7 +7592,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &397874854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10307,7 +10307,7 @@ SpriteRenderer:
   m_SortingOrder: 9
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6318018210075395807, guid: 687c4dde3fcd5004bbab05709fe8d758, type: 3}
-  m_Color: {r: 0.113245904, g: 1, b: 0.058490515, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -10325,12 +10325,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808125076}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 55.09, y: 15.61, z: 0}
-  m_LocalScale: {x: 6.7, y: 3.9546912, z: 0.88398665}
+  m_LocalScale: {x: 4, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1847752843}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &826161124
 GameObject:
@@ -94440,6 +94440,7 @@ Transform:
   - {fileID: 1157278247}
   - {fileID: 1067191967}
   - {fileID: 981407962}
+  - {fileID: 808125078}
   - {fileID: 2049574741}
   - {fileID: 1892374290}
   - {fileID: 1353534509}
@@ -97186,4 +97187,3 @@ SceneRoots:
   - {fileID: 1847752843}
   - {fileID: 959864346}
   - {fileID: 1849621134}
-  - {fileID: 808125078}
