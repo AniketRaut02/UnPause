@@ -1,8 +1,9 @@
+using DarkPixelGD.Audio;
+using DarkPixelGD.Input;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DarkPixelGD.Input;
 
 namespace DarkPixelGD.Narrator
 {
@@ -12,6 +13,10 @@ namespace DarkPixelGD.Narrator
 
         [SerializeField] private InputReader _inputReader; // used only to allow skipping a line early
         [SerializeField] private AudioSource _audioSource;
+
+        [Header("Line Pop Sound")]
+        [SerializeField] private AudioEventChannelSO _audioChannel; 
+        [SerializeField] private SoundDataSO _linePopSound;
 
         public event Action<DialogueDataSO> OnDialogueStarted;
         public event Action<DialogueLine, int> OnLineChanged;
@@ -35,8 +40,12 @@ namespace DarkPixelGD.Narrator
         private IEnumerator ProcessQueue()
         {
             IsPlaying = true;
+            PauseService.Instance.RequestPause();
+
             while (_queue.Count > 0)
                 yield return PlayDialogue(_queue.Dequeue());
+            PauseService.Instance.ReleasePause();
+
             IsPlaying = false;
         }
 
@@ -48,6 +57,8 @@ namespace DarkPixelGD.Narrator
             {
                 DialogueLine line = data.lines[i];
                 OnLineChanged?.Invoke(line, i);
+
+                _audioChannel?.RaisePlaySound(_linePopSound, transform.position);
 
                 if (line.voiceClip != null && _audioSource != null)
                     _audioSource.PlayOneShot(line.voiceClip);

@@ -1,3 +1,5 @@
+using DarkPixelGD.Narrator;
+using DarkPixelGD.Tutorial;
 using UnityEngine;
 
 public class PauseMenuController : MonoBehaviour
@@ -20,6 +22,8 @@ public class PauseMenuController : MonoBehaviour
     public void ToggleMenu()
     {
         if (CarveModeController.Instance != null && CarveModeController.Instance.IsCarveModeActive) return;
+        if (NarratorService.Instance != null && NarratorService.Instance.IsPlaying) return;
+        if (TutorialPromptManager.Instance != null && TutorialPromptManager.Instance.IsShowingPrompt) return;
         SetMenuOpen(!IsMenuOpen);
     }
 

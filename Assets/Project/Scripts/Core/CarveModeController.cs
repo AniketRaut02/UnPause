@@ -1,4 +1,5 @@
 using DarkPixelGD.Input;
+using DarkPixelGD.Narrator;
 using DarkPixelGD.Tutorial;
 using System;
 using UnityEngine;
@@ -26,6 +27,7 @@ public class CarveModeController : MonoBehaviour
     {
         if (PauseMenuController.Instance != null && PauseMenuController.Instance.IsMenuOpen) return;
         if (TutorialPromptManager.Instance != null && TutorialPromptManager.Instance.IsShowingPrompt) return;
+        if (NarratorService.Instance != null && NarratorService.Instance.IsPlaying) return;
         SetCarveMode(!IsCarveModeActive);
     }
 

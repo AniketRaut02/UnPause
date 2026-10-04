@@ -776,6 +776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.NarratorService
   _inputReader: {fileID: 11400000, guid: b4524909d1df1754fa0ce8fddafd5185, type: 2}
   _audioSource: {fileID: 68740034}
+  _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
+  _linePopSound: {fileID: 11400000, guid: e1d45831ff20a244e8cae0e163e30086, type: 2}
 --- !u!1 &183337763
 GameObject:
   m_ObjectHideFlags: 0
@@ -25559,7 +25561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.39
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -35196,12 +35198,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1847752843}
     m_Modifications:
     - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.70611
+      objectReference: {fileID: 0}
+    - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_LocalScale.y
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: -0.8731
       objectReference: {fileID: 0}
     - target: {fileID: 433537927296704389, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_LocalPosition.y
