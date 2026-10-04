@@ -1,6 +1,7 @@
 using DarkPixelGD.Audio;
 using DarkPixelGD.Juice;
 using DarkPixelGD.Player;
+using DarkPixelGD.Systems.Combat;
 using System;
 using UnityEngine;
 
@@ -42,6 +43,9 @@ namespace DarkPixelGD.Interaction
                 _audioChannel?.RaisePlaySound(_lockedSoundSO, transform.position);
                 return;
             }
+
+            if (other.TryGetComponent(out Health health))
+                health.SetInvulnerable(true);
 
             if (_audioChannel != null && _portalActivatedSoundSO != null) { _audioChannel.RaisePlaySound(_portalActivatedSoundSO, transform.position); }
             if (_juiceChannel != null && _portalActivatedJuiceProfile != null) _juiceChannel.RaiseJuice(_portalActivatedJuiceProfile, transform.position);

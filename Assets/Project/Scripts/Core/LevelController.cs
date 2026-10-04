@@ -24,6 +24,7 @@ namespace DarkPixelGD.Core
         [SerializeField] private JuiceEventChannelSO _juiceChannel;
         [SerializeField] private JuiceProfileSO _explosionJuiceProfile;
         private bool _hasUsedFreeDeath;
+        private bool _hasEnded;
 
         private void Start()
         {
@@ -47,7 +48,10 @@ namespace DarkPixelGD.Core
 
         private void HandleLevelComplete()
         {
-            PauseService.Instance.ReleasePause();
+            if (_hasEnded) return;
+            _hasEnded = true;
+
+            PauseService.Instance.ForceUnpause();
             if (!string.IsNullOrEmpty(config.nextSceneName))
                 SceneLoader.Instance.LoadScene(config.nextSceneName);
             else
@@ -56,16 +60,19 @@ namespace DarkPixelGD.Core
 
         private void HandleTimerExpired()
         {
-            PauseService.Instance.ReleasePause();
+            if (_hasEnded) return; // already transitioning out via the portal — ignore a late/racing death
+
+            PauseService.Instance.ForceUnpause();
 
             if (config.firstDeathIsFree && !_hasUsedFreeDeath)
             {
                 _hasUsedFreeDeath = true;
                 HintPopupUI.Instance?.Show("Try pausing.");
                 StartCoroutine(RespawnWithInvulnerability());
-                return;
+                return; // level continues, so _hasEnded intentionally stays false
             }
 
+            _hasEnded = true;
             StartCoroutine(ExplodeAndReload());
         }
         private IEnumerator ExplodeAndReload()
