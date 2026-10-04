@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: ManipulatorTutorial
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Tutorial.TutorialPromptDataSO
   title: Pause Mode Manupulation
-  message: '[ESC]- Activate Pause Mode
+  message: '[TAB]- Activate Pause Mode
 
     Click the yellow highlighted objects
-    to open move options.'
-  icon: {fileID: 21300000, guid: 39cdf9c270722594984f212757e1eb33, type: 3}
+    to open move options.
+
+    The Movable objects are marked by an arrow.'
+  icon: {fileID: 21300000, guid: 48e99e8f11307eb499f6dc7627e1ed10, type: 3}

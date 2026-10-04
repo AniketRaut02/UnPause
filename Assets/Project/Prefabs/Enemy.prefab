@@ -407,7 +407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3635987115273562549}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.8, y: -36.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -552,7 +552,7 @@ Animator:
   m_GameObject: {fileID: 3635987115273562549}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7fe7a355152026141ad146fb3273bcc9, type: 2}
+  m_Controller: {fileID: 9100000, guid: fcd85afc9288d49409a56f2b535aac34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -609,7 +609,9 @@ MonoBehaviour:
   _muzzle: {fileID: 6122750696664326628}
   _shootJuicePoint: {fileID: 7334284385046379868}
   _bulletPrefab: {fileID: 5013431130854879096, guid: d276afa392707ec46ad635c90803bd58, type: 3}
-  _fireInterval: 5
+  _player: {fileID: 0}
+  _shootRange: 10
+  _fireInterval: 1
   _minDamage: 5
   _maxDamage: 6
   _gunAnimator: {fileID: 3377865439324639181}

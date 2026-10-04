@@ -1,3 +1,4 @@
+using DarkPixelGD.Audio;
 using UnityEngine;
 
 namespace DarkPixelGD.VFX
@@ -5,13 +6,17 @@ namespace DarkPixelGD.VFX
     [RequireComponent(typeof(Animator))]
     public class ExplosionEffect : MonoBehaviour
     {
-      //  private Animator _animator;
-     //   private static readonly int _playHash = Animator.StringToHash("Play");
+        [Header("Audio")]
+        [SerializeField] private AudioEventChannelSO _audioChannel;
+        [SerializeField] private SoundDataSO _orbPickupSoundSO;
 
-       // private void Awake() => _animator = GetComponent<Animator>();
-        //private void Start() => _animator.SetTrigger(_playHash); // plays immediately on spawn, no external trigger call needed
-
-        // Wire to an Animation Event on the clip's last frame — same cleanup pattern as DamageNumberUI
+        private void Start()
+        {
+            if(_audioChannel!=null && _orbPickupSoundSO!=null)
+            {
+                _audioChannel.RaisePlaySound(_orbPickupSoundSO, transform.position);
+            }
+        }
         public void DestroySelf() => Destroy(gameObject);
     }
 }

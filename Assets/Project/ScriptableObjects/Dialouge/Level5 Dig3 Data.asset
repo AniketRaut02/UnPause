@@ -14,12 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: The torture wasnt enough for you.
+  - text: '"You really thought that was the end?"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: You made it to last Level.
+  - text: '"The torture wasn''t enough for you..."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: But this is goning to be a nightmare for you.
+  - text: '"You survived every trap."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You broke every rule I gave you."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"And somehow..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You made it to the last level."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Then let me give you what you''ve been looking for."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Your final test."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"This is going to be a nightmare, DEV."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

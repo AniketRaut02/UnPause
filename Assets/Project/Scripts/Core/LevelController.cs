@@ -77,8 +77,9 @@ namespace DarkPixelGD.Core
         }
         private IEnumerator ExplodeAndReload()
         {
+            Vector3 spawnPos = player.transform.position;
             if (_explosionPrefab != null)
-                Instantiate(_explosionPrefab, player.transform.position, Quaternion.identity);
+                Instantiate(_explosionPrefab, spawnPos, Quaternion.identity);
 
             _juiceChannel.RaiseJuice(_explosionJuiceProfile, player.transform.position);
 

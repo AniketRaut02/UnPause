@@ -14,9 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: What how u did that?
+  - text: '"Wait... what?"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Well you are not getting out easily DEV!
+  - text: '"How did you do that?!"'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Heh..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Looks like you still remember a few tricks."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"But don''t get too confident, DEV."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You''re not getting out that easily."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

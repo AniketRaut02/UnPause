@@ -14,9 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: What happend, can't find a way??
+  - text: '"Enough with the traps."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Without key how would you open the last portal!
+  - text: '"I''m done playing with you."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"If you won''t give up..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Then I''ll take matters into my own hands."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Come on, DEV..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Give me your best."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

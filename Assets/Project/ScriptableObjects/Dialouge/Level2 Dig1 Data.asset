@@ -14,12 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: You completed the previous level!
+  - text: '"Oh? You actually made it through the first one."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Lets have some fun now
+  - text: '"I was starting to think I''d have to make things easier for you."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: You cannot dash now
+  - text: '"But don''t worry..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"I''ve prepared something special."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You can''t dash anymore."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

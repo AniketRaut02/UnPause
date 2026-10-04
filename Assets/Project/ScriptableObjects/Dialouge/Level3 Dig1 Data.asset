@@ -14,12 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: What just happend?
+  - text: '"What just happened?"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Looks like ur controls are messed up
+  - text: '"Did your precious controls stop listening to you?"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Suffer suffer suffer
+  - text: '"You made me suffer through this..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"So now it''s your turn."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You made it this far..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"But this is nowhere near the end."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Suffer... suffer... SUFFER!"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

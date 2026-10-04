@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: 'You made it till here but this is not the end. '
+  - text: '"You made it this far..."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Face the wrath now!
+  - text: '"Impressive."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"But now..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Face my wrath."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

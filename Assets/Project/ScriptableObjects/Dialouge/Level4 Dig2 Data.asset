@@ -14,9 +14,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: You have restored the controls but still I am in Control!!!
+  - text: '"So... you restored your controls."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: Now you feel how Protagnists face Enemies.
+  - text: '"You must be feeling pretty confident now."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"But there''s something you seem to have forgotten..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"I''m still in control."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Now you know how it feels..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"When the rules change..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"And the protagonist has no choice but to face them."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Welcome to my world, DEV."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

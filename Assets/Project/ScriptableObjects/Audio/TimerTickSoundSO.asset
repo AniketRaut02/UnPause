@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TimerTickSoundSO
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Audio.SoundDataSO
   clips:
-  - {fileID: 8300000, guid: b7458357e3fb10546847d00ea346edf2, type: 3}
+  - {fileID: 8300000, guid: a91b005db8a08054998ec72557bc7788, type: 3}
   mixerGroup: {fileID: -3260874455937307460, guid: 84639db89652a3744854d652bf8b8bb2, type: 2}
   volume: 1
   volumeVariance: 0.05

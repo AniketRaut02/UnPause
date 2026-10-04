@@ -14,9 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: How did you restore the Dash!!
+  - text: '"WHAT?!"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: You certainly can't escape the next trap for sure!
+  - text: '"How did you restore your Dash?!"'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You''re getting annoying, DEV."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"But don''t celebrate just yet."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"There''s no way you''re escaping the next trap."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

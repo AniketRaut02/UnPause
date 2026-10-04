@@ -20,7 +20,8 @@ namespace DarkPixelGD.UI
 
         [Header("Audio")]
         [SerializeField] private AudioEventChannelSO _audioChannel;
-        [SerializeField] private SoundDataSO _timerTickSound;
+        [SerializeField] private SoundDataSO _timerWarnSound;
+        [SerializeField] private SoundDataSO _clockTickSound;
         [SerializeField] private Transform playerTransform;
 
         private static readonly int _pulseHash = Animator.StringToHash("Pulse");
@@ -29,12 +30,17 @@ namespace DarkPixelGD.UI
         private void Start()
         {
             TimerService.Instance.OnTick += HandleTick;
+            TimerService.Instance.OnTimerExpired += StopTimerTick;
         }
 
         private void OnDisable()
         {
             if (TimerService.Instance != null)
+            {
                 TimerService.Instance.OnTick -= HandleTick;
+                TimerService.Instance.OnTimerExpired += StopTimerTick;
+            }
+
         }
 
         private void HandleTick(float timeRemaining)
@@ -51,13 +57,19 @@ namespace DarkPixelGD.UI
                 Color target = shouldWarn ? _warningColor : _normalColor;
                 _timeLabel.color = target;
                 _icon.color = target;
-                if (_audioChannel != null && _timerTickSound != null) { _audioChannel.RaisePlaySound(_timerTickSound, playerTransform.position); }
+                if (_audioChannel != null && _timerWarnSound != null) { _audioChannel.RaisePlaySound(_timerWarnSound, playerTransform.position); }
+                if (_audioChannel != null && _clockTickSound != null) { _audioChannel.RaisePlaySound(_clockTickSound, playerTransform.position); }
                 if (shouldWarn && _animator != null)
                 {
                     _animator.SetTrigger(_pulseHash); // one-shot punch/scale clip, same Animator-owns-motion pattern as your gun
                 }
                   
             }
+        }
+
+        public void StopTimerTick()
+        {
+            if (_audioChannel != null && _clockTickSound != null) { _audioChannel.RaiseStopSound(_clockTickSound, playerTransform.position); }
         }
     }
 }

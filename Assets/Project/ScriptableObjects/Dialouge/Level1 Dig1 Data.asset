@@ -14,12 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Developer
   lines:
-  - text: 'Ha ha ha ha ha '
+  - text: '"Ha... ha... ha... ha..."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: How does it feel to get trapped!!
+  - text: '"How does it feel to finally be trapped?"'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: There is no way you can get out of this.
+  - text: '"You spent so long trapping me..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Now there''s no way for you to get out."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

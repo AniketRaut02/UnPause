@@ -851,6 +851,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.NarratorService
   _inputReader: {fileID: 11400000, guid: b4524909d1df1754fa0ce8fddafd5185, type: 2}
   _audioSource: {fileID: 68740034}
+  _audioChannel: {fileID: 0}
+  _linePopSound: {fileID: 0}
 --- !u!1 &151432089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3429,7 +3431,7 @@ Animator:
   m_GameObject: {fileID: 687316515}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7fe7a355152026141ad146fb3273bcc9, type: 2}
+  m_Controller: {fileID: 9100000, guid: fcd85afc9288d49409a56f2b535aac34, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6355,7 +6357,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.5625}
+    oldSize: {x: 1.1666666, y: 2.0833333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -6474,7 +6476,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.875, y: 1.5625}
+    oldSize: {x: 1.1666666, y: 2.0833333}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

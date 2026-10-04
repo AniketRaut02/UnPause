@@ -1420,7 +1420,7 @@ MonoBehaviour:
   m_Intensity: 0.45
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000004d12a12d
   m_LightCookieSprite: {fileID: -496628933893617875, guid: 9fda16a527bc4cf4ea115e1615488d09, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -30715,7 +30715,7 @@ MonoBehaviour:
   m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000004d12a12d
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -31853,6 +31853,7 @@ GameObject:
   - component: {fileID: 1000851018}
   - component: {fileID: 1000851020}
   - component: {fileID: 1000851019}
+  - component: {fileID: 1000851021}
   m_Layer: 0
   m_Name: pit
   m_TagString: Untagged
@@ -32130,6 +32131,44 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!19719996 &1000851021
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000851017}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0
+  m_UseDelaunayMesh: 0
 --- !u!1 &1056104357
 GameObject:
   m_ObjectHideFlags: 0
@@ -44421,7 +44460,7 @@ MonoBehaviour:
   m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000004d12a12d
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -45017,7 +45056,8 @@ MonoBehaviour:
   _warningColor: {r: 1, g: 0, b: 0, a: 1}
   _animator: {fileID: 1894114649}
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
-  _timerTickSound: {fileID: 11400000, guid: 77cb5f3665df98a4185ae5fd78ff47a5, type: 2}
+  _timerWarnSound: {fileID: 11400000, guid: 77cb5f3665df98a4185ae5fd78ff47a5, type: 2}
+  _clockTickSound: {fileID: 11400000, guid: 4fb824fb80a9cec499a980f271c56006, type: 2}
   playerTransform: {fileID: 1770398193}
 --- !u!95 &1894114649
 Animator:
@@ -45388,7 +45428,7 @@ MonoBehaviour:
   m_Intensity: 2
   m_LightVolumeIntensity: 0.06
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000004d12a12d
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -54230,22 +54270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6913515888767377652, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 7fe7a355152026141ad146fb3273bcc9, type: 2}
     - target: {fileID: 7514189196054732630, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 1770398193}
-    - target: {fileID: 7514189196054732630, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
-      propertyPath: _shootRange
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7514189196054732630, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
-      propertyPath: _fireInterval
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7709974187906122783, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: m_Camera
       value: 
