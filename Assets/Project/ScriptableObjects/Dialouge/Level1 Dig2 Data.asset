@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd7cfece835a8848b5b8778383aca6b, type: 3}
   m_Name: Level1 Dig2 Data
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
-  speakerName: Developer
+  speakerName: Unknown Entity
   lines:
   - text: '"Wait... what?"'
     voiceClip: {fileID: 0}

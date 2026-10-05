@@ -612,8 +612,8 @@ MonoBehaviour:
   _player: {fileID: 0}
   _shootRange: 10
   _fireInterval: 1
-  _minDamage: 5
-  _maxDamage: 6
+  _minDamage: 8
+  _maxDamage: 15
   _gunAnimator: {fileID: 3377865439324639181}
   _muzzleFlash: {fileID: 2756897740731577937}
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}

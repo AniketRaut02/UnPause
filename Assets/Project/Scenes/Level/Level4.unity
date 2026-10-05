@@ -28700,7 +28700,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 960
-  _rotationSpeed: 300
+  _rotationSpeed: 150
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _laserSoundSO: {fileID: 11400000, guid: 55091ab2e3a448b4a81379d4990d7777, type: 2}
 --- !u!120 &104932572
@@ -34618,7 +34618,7 @@ MonoBehaviour:
   _channel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}
   _impulseSource: {fileID: 565614467}
   _perlin: {fileID: 273238643}
-  _explosionWarningThreshold: 5
+  _explosionWarningThreshold: 10
   _maxContinuousAmplitude: 2
 --- !u!114 &565614466
 MonoBehaviour:
@@ -34919,7 +34919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &625295021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35024,7 +35024,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &758648445
 Transform:
   m_ObjectHideFlags: 0
@@ -35058,7 +35058,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 960
-  _rotationSpeed: 300
+  _rotationSpeed: 150
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _laserSoundSO: {fileID: 11400000, guid: 55091ab2e3a448b4a81379d4990d7777, type: 2}
 --- !u!120 &758648447
@@ -35788,7 +35788,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &932635402
 Transform:
   m_ObjectHideFlags: 0
@@ -35822,7 +35822,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 960
-  _rotationSpeed: 300
+  _rotationSpeed: 150
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _laserSoundSO: {fileID: 11400000, guid: 55091ab2e3a448b4a81379d4990d7777, type: 2}
 --- !u!120 &932635404
@@ -43547,7 +43547,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 6291941437148203046, guid: 9ac47cae131f5d242bd9871b3a202458, type: 3}
   _explosionDelayBeforeFade: 1
   _juiceChannel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}
-  _explosionJuiceProfile: {fileID: 11400000, guid: 011c3a4d1b6dcb34f9112ba5569f9e7e, type: 2}
+  _explosionJuiceProfile: {fileID: 11400000, guid: c93d3a48ceec95249b5c299e2c944390, type: 2}
 --- !u!1 &1291124000
 GameObject:
   m_ObjectHideFlags: 0
@@ -44628,6 +44628,63 @@ MonoBehaviour:
   _channel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _hoverSound: {fileID: 11400000, guid: d595a545ed931734193deef1e49dc2d0, type: 2}
   _clickSound: {fileID: 11400000, guid: 87db38aa711de6b48ba906a290bd141f, type: 2}
+--- !u!1001 &1666381475
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 42.61407
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 39.89277
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694396462979837498, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806513353158846995, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
+      propertyPath: m_Name
+      value: BGMPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d901ccbbf9486243b642a1683e903f1, type: 3}
 --- !u!1001 &1744581596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46283,7 +46340,7 @@ MonoBehaviour:
   _hitMask:
     serializedVersion: 2
     m_Bits: 960
-  _rotationSpeed: 300
+  _rotationSpeed: 150
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _laserSoundSO: {fileID: 11400000, guid: 55091ab2e3a448b4a81379d4990d7777, type: 2}
 --- !u!120 &1912377633
@@ -53802,3 +53859,4 @@ SceneRoots:
   - {fileID: 1275722272}
   - {fileID: 2027945964}
   - {fileID: 1996603550}
+  - {fileID: 1666381475}
