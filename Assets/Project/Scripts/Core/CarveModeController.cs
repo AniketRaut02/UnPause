@@ -34,15 +34,23 @@ public class CarveModeController : MonoBehaviour
     private void SetCarveMode(bool active)
     {
         if (active == IsCarveModeActive) return;
-        IsCarveModeActive = active;
-        _overlayPanel.SetActive(active);
-        if (active) PauseService.Instance.RequestPause();
-        else PauseService.Instance.ReleasePause();
-        OnCarveModeChanged?.Invoke(active);
+
+        if (active)
+        {
+            if (!PauseService.Instance.RequestPause()) return; 
+            IsCarveModeActive = true;
+            _overlayPanel.SetActive(true);
+        }
+        else
+        {
+            IsCarveModeActive = false;
+            _overlayPanel.SetActive(false);
+            PauseService.Instance.ReleasePause();
+        }
+        OnCarveModeChanged?.Invoke(IsCarveModeActive);
     }
 
-    // If a ForceUnpause happened (e.g. death mid-carve), resync our local flag
-    // without double-releasing a request that's already gone.
+
     private void HandleGlobalPauseChanged(bool isPaused)
     {
         if (!isPaused && IsCarveModeActive)

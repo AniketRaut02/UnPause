@@ -8,6 +8,7 @@ public class PauseService : MonoBehaviour
     public event Action<bool> OnPauseChanged;
 
     private int _pauseRequests;
+    private bool _isLocked;
 
     private void Awake()
     {
@@ -15,7 +16,13 @@ public class PauseService : MonoBehaviour
         Instance = this;
     }
 
-    public void RequestPause() { _pauseRequests++; Refresh(); }
+    public bool RequestPause()
+    {
+        if (_isLocked) return false; 
+        _pauseRequests++;
+        Refresh();
+        return true;
+    }
     public void ReleasePause() { _pauseRequests = Mathf.Max(0, _pauseRequests - 1); Refresh(); }
 
     // Used only by death/level-transition flows — guarantees a clean state regardless
@@ -34,4 +41,18 @@ public class PauseService : MonoBehaviour
         Time.timeScale = IsPaused ? 0f : 1f;
         OnPauseChanged?.Invoke(IsPaused);
     }
+
+    public void LockUntilNextScene()
+    {
+        _isLocked = true;
+        ForceUnpause();
+    }
+
+    public void UnlockForNewScene()
+    {
+        _isLocked = false;
+        _pauseRequests = 0;
+        Refresh();
+    }
+
 }

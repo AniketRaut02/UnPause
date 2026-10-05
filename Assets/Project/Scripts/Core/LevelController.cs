@@ -50,6 +50,7 @@ namespace DarkPixelGD.Core
         {
             if (_hasEnded) return;
             _hasEnded = true;
+            PauseService.Instance.LockUntilNextScene();
 
             PauseService.Instance.ForceUnpause();
             if (!string.IsNullOrEmpty(config.nextSceneName))
@@ -60,19 +61,19 @@ namespace DarkPixelGD.Core
 
         private void HandleTimerExpired()
         {
-            if (_hasEnded) return; // already transitioning out via the portal — ignore a late/racing death
-
-            PauseService.Instance.ForceUnpause();
+            if (_hasEnded) return;
 
             if (config.firstDeathIsFree && !_hasUsedFreeDeath)
             {
                 _hasUsedFreeDeath = true;
+                PauseService.Instance.ForceUnpause(); 
                 HintPopupUI.Instance?.Show("Try pausing.");
                 StartCoroutine(RespawnWithInvulnerability());
-                return; // level continues, so _hasEnded intentionally stays false
+                return;
             }
 
             _hasEnded = true;
+            PauseService.Instance.LockUntilNextScene();
             StartCoroutine(ExplodeAndReload());
         }
         private IEnumerator ExplodeAndReload()

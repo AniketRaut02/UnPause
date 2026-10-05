@@ -41,6 +41,8 @@ namespace DarkPixelGD.UI
             op.allowSceneActivation = true;
             while (!op.isDone) yield return null;
 
+            PauseService.Instance.UnlockForNewScene();
+
             yield return _loadingScreen.FadeIn();
             if (showProgress) _loadingScreen.SetProgressVisible(false);
         }
