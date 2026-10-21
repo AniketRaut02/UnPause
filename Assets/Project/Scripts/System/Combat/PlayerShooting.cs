@@ -2,7 +2,6 @@ using DarkPixelGD.Audio;
 using DarkPixelGD.Combat;
 using DarkPixelGD.Juice;
 using DarkPixelGD.Systems.Combat;
-using DarkPixelGD.VFX;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

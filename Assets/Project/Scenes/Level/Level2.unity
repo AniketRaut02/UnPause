@@ -6390,6 +6390,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Combat.MuzzleFlash
   _flashDuration: 0.05
+  muzzleSprites:
+  - {fileID: 21300000, guid: cec7f0489bfa015499ed2f16c2a77860, type: 3}
+  - {fileID: 8861822528144831596, guid: 396bab83284b813429020218564df6fa, type: 3}
+  - {fileID: 6659190769846973701, guid: 396bab83284b813429020218564df6fa, type: 3}
+  - {fileID: 1076976527658001817, guid: 396bab83284b813429020218564df6fa, type: 3}
 --- !u!212 &523618221
 SpriteRenderer:
   serializedVersion: 3
@@ -9807,6 +9812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Combat.MuzzleFlash
   _flashDuration: 0.05
+  muzzleSprites: []
 --- !u!212 &1135549567
 SpriteRenderer:
   serializedVersion: 3
@@ -40571,6 +40577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Combat.MuzzleFlash
   _flashDuration: 0.05
+  muzzleSprites: []
 --- !u!212 &2065275006
 SpriteRenderer:
   serializedVersion: 3
