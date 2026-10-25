@@ -17,6 +17,12 @@ namespace DarkPixelGD.Player
         [SerializeField] private Health _health;
         [SerializeField] private PlayerShooting _shooting;
 
+        [Header("Dash Ghost Trail")]
+        [SerializeField] private GameObject _ghostPrefab;
+        [SerializeField] private SpriteRenderer _playerSpriteRenderer; // Assign your active sprite renderer
+        [SerializeField] private float _ghostSpawnInterval = 0.05f;    // Time between spawned ghosts
+        private float _ghostSpawnTimer;
+
         [Header("Audio")]
         [SerializeField] private AudioEventChannelSO _audioChannel;
         [SerializeField] private SoundDataSO _dashSound;
@@ -101,6 +107,13 @@ namespace DarkPixelGD.Player
         {
             if (_isDashing)
             {
+                _ghostSpawnTimer -= Time.fixedDeltaTime;
+                if (_ghostSpawnTimer <= 0f)
+                {
+                    SpawnGhost();
+                    _ghostSpawnTimer = _ghostSpawnInterval;
+                }
+
                 if (Time.frameCount >= _dashEndFixedFrame)
                 {
                     EndDash();
@@ -141,9 +154,12 @@ namespace DarkPixelGD.Player
             Vector2 dashDirection = _moveInput.sqrMagnitude > 0.01f ? _moveInput : _facingDirection;
             _rb.linearVelocity = dashDirection * _data.dashBurstSpeed;
 
-            if (_juiceChannel != null && _dashJuiceProfile != null) {     _juiceChannel.RaiseJuice(_dashJuiceProfile, transform.position);  }
+            // Trigger immediate ghost on start
+            _ghostSpawnTimer = 0f;
+            SpawnGhost();
+
+            if (_juiceChannel != null && _dashJuiceProfile != null) { _juiceChannel.RaiseJuice(_dashJuiceProfile, transform.position); }
             if (_audioChannel != null && _dashSound != null) { _audioChannel.RaisePlaySound(_dashSound, transform.position); }
-            
         }
 
         private void EndDash()
@@ -174,5 +190,23 @@ namespace DarkPixelGD.Player
         }
 
         public void SetHasKey(bool value) => _hasKey = value;
+
+
+        private void SpawnGhost()
+        {
+            if (_ghostPrefab == null || _playerSpriteRenderer == null) return;
+
+            GameObject ghostObj = Instantiate(_ghostPrefab, transform.position, transform.rotation);
+            if (ghostObj.TryGetComponent(out DashGhost ghost))
+            {
+                ghost.Initialize(
+                    _playerSpriteRenderer.sprite,
+                    transform.position,
+                    transform.rotation,
+                    transform.localScale,
+                    _playerSpriteRenderer.flipY
+                );
+            }
+        }
     }
 }
