@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd7cfece835a8848b5b8778383aca6b, type: 3}
+  m_Name: Level6 Dig1 Data
+  m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
+  speakerName: Protagonist
+  lines:
+  - text: '"Well, well, well..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Look who came crawling back."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"I have to admit, DEV..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"I didn''t think you''d be stupid enough to return."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Her soul, her memories, her very existence..."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"All broken into little pieces."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Collect them all, and perhaps you''ll get her back."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5

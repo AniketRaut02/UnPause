@@ -15,62 +15,43 @@ MonoBehaviour:
   pages:
   - text: 'And somehow...
 
-      "I was the one who ended up getting tested."'
+      After everything I went through...
+
+      I went
+      back.'
     holdDurationAfterTyping: 2
-  - text: 'But I fought through and I escaped. '
+  - text: 'I thought I understood this world.
+
+      I built it. I controlled it.'
     holdDurationAfterTyping: 2
-  - text: 'I used to think making a game was about controlling everything.
+  - text: 'But to her...
 
-      The
-      character.
-
-      The world.
-
-      The rules.
-
-      The outcome.'
+      It was everything.'
     holdDurationAfterTyping: 2
-  - text: 'But somewhere along the way...
+  - text: 'Every trap. Every failure.
 
-      I forgot something.'
+      Every time I pressed restart...'
     holdDurationAfterTyping: 2
-  - text: A character doesn't know she's a character.
-    holdDurationAfterTyping: 2
-  - text: 'To her...
-
-      That world is everything.'
-    holdDurationAfterTyping: 2
-  - text: 'Every time she failed...
-
-      That was real.'
-    holdDurationAfterTyping: 2
-  - text: 'And I kept pressing restart
-
-      Again
-
-      And again
-
-      And again.
-
-'
-    holdDurationAfterTyping: 2
-  - text: 'I thought I was building a game.
-
-      But maybe...
-
-      I was just
-      teaching her how to become better at surviving me.'
+  - text: She had to live through it.
     holdDurationAfterTyping: 2
   - text: 'I don''t know if she was ever really alive.
 
       Maybe she wasn''t.
 
       Maybe
-      this was just a bug.'
+      it was just a bug.'
     holdDurationAfterTyping: 2
-  - text: But if there's one thing I learned..
+  - text: But for the first time...
     holdDurationAfterTyping: 2
-  - text: You can't give someone a world and expect them to never question its rules.
+  - text: 'I wondered if being the creator
+
+      meant I was always right.'
+    holdDurationAfterTyping: 2
+  - text: I thought I was making a game.
+    holdDurationAfterTyping: 2
+  - text: 'Maybe I was making something
+
+      I didn''t understand.'
     holdDurationAfterTyping: 2
   - text: I'm sorry.
     holdDurationAfterTyping: 2

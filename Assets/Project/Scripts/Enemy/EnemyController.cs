@@ -79,9 +79,12 @@ namespace DarkPixelGD.Enemy
 
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             _aimPivot.rotation = Quaternion.Euler(0, 0, angle);
-
-            if (_aimPivotRenderer != null)
-                _aimPivotRenderer.flipY = Mathf.Abs(angle) > 90f;
+            bool aimingLeft = Mathf.Abs(angle) > 90f;
+            float scaleY = aimingLeft ? -1 : 1;
+            _aimPivotRenderer.gameObject.transform.localScale =
+               new Vector3(_aimPivotRenderer.gameObject.transform.localScale.x, scaleY, _aimPivotRenderer.gameObject.transform.localScale.z);
+/*            if (_aimPivotRenderer != null)
+                _aimPivotRenderer.flipY = Mathf.Abs(angle) > 90f;*/
         }
 
 

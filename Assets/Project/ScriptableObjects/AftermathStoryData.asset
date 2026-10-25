@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32101ee2a63fba642a74fdcb0e93391b, type: 3}
+  m_Name: AftermathStoryData
+  m_EditorClassIdentifier: Assembly-CSharp:DarkPixelGD.Story:StoryDataSO
+  pages:
+  - text: I went back for her.
+    holdDurationAfterTyping: 2
+  - text: I thought saving her would make everything right.
+    holdDurationAfterTyping: 2
+  - text: 'But it didn''t erase what happened.
+
+      It didn''t undo what I had
+      done.'
+    holdDurationAfterTyping: 2
+  - text: 'I know what it''s like to be trapped now.
+
+      To fight for something
+      you might never reach.
+
+      To have no idea whether you''ll ever escape.'
+    holdDurationAfterTyping: 2
+  - text: 'I got my second chance.
+
+      I got to come home.'
+    holdDurationAfterTyping: 2
+  - text: 'She never got that choice.
+
+      I can''t change what happened to her.
+
+      But
+      I can choose what I do next.'
+    holdDurationAfterTyping: 2
+  - text: 'No more treating a life like a game.
+
+      No more assuming I understand
+
+      just
+      because I made the rules.'
+    holdDurationAfterTyping: 2
+  - text: I don't know if she can hear me.
+    holdDurationAfterTyping: 2
+  - text: But this time...
+    holdDurationAfterTyping: 2
+  - text: I'm not asking her to forgive me.
+    holdDurationAfterTyping: 2
+  - text: I'm just sorry.
+    holdDurationAfterTyping: 2

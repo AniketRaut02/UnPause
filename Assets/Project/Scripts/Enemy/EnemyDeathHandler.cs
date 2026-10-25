@@ -2,27 +2,28 @@ using DarkPixelGD.Audio;
 using DarkPixelGD.Juice;
 using DarkPixelGD.Player;
 using DarkPixelGD.Systems.Combat;
+using DarkPixelGD.Systems.Key;
 using UnityEngine;
 
 namespace DarkPixelGD.Enemy
 {
     public class EnemyDeathHandler : MonoBehaviour
     {
-        [Header("Refrences")]
+        [Header("References")]
         [SerializeField] private Health _health;
-        [SerializeField] private Enemy.EnemyController _controller;
-        [SerializeField] private Enemy.EnemyShooter _shooting;
+        [SerializeField] private EnemyController _controller;
+        [SerializeField] private EnemyShooter _shooting;
         [SerializeField] private Rigidbody2D _rb;
 
-        [Header("Health Pickup Drop")]
-        [SerializeField] private bool _dropsHealthPickup = false;
-        [SerializeField] private GameObject _healthPickupPrefab;
+        [Header("Item Drop On Death")]
+        [SerializeField] private bool _dropsItem = false;
+        [SerializeField] private GameObject _itemPrefab; // Drag your Key or Health pickup here
 
         [Header("Audio")]
         [SerializeField] private AudioEventChannelSO _audioChannel;
         [SerializeField] private SoundDataSO _deathSoundSO;
 
-        [Header("Juice Refrences")]
+        [Header("Juice References")]
         [SerializeField] private JuiceEventChannelSO _juiceChannel;
         [SerializeField] private JuiceProfileSO _deathJuiceProfile;
 
@@ -31,21 +32,31 @@ namespace DarkPixelGD.Enemy
 
         private void Awake()
         {
-            _health = GetComponent<Health>();
-            _controller = GetComponent<EnemyController>();
-            _shooting = GetComponent<EnemyShooter>();
-            _rb = GetComponent<Rigidbody2D>();
+            if (_health == null) _health = GetComponent<Health>();
+            if (_controller == null) _controller = GetComponent<EnemyController>();
+            if (_shooting == null) _shooting = GetComponent<EnemyShooter>();
+            if (_rb == null) _rb = GetComponent<Rigidbody2D>();
         }
+
         private void HandleDeath()
         {
             if (_rb != null) _rb.linearVelocity = Vector2.zero;
             if (_controller != null) _controller.enabled = false;
             if (_shooting != null) _shooting.enabled = false;
-            if (_audioChannel != null && _deathSoundSO != null) { _audioChannel.RaisePlaySound(_deathSoundSO, transform.position); }
-            if (_juiceChannel != null && _deathJuiceProfile != null) _juiceChannel.RaiseJuice(_deathJuiceProfile,transform.position);
 
-            if (_dropsHealthPickup && _healthPickupPrefab != null)
-                Instantiate(_healthPickupPrefab, transform.position, Quaternion.identity);
+            if (_audioChannel != null && _deathSoundSO != null)
+                _audioChannel.RaisePlaySound(_deathSoundSO, transform.position);
+
+            if (_juiceChannel != null && _deathJuiceProfile != null)
+                _juiceChannel.RaiseJuice(_deathJuiceProfile, transform.position);
+
+            if (_dropsItem && _itemPrefab != null)
+            {
+                GameObject keyPickup = Instantiate(_itemPrefab, transform.position, Quaternion.identity);
+                keyPickup.GetComponent<KeyPickup>().isLastLevel = true; 
+            }
+                
+
             Destroy(gameObject, 1f);
         }
     }

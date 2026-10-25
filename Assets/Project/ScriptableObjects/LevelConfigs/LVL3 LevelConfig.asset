@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdff8b8e9718f0b438230642b4bb2e30, type: 3}
   m_Name: LVL3 LevelConfig
   m_EditorClassIdentifier: Assembly-CSharp::LevelConfig
-  timerDuration: 120
+  timerDuration: 100
   startWithDashLocked: 0
   startWithInvertedControls: 1
   firstDeathIsFree: 0

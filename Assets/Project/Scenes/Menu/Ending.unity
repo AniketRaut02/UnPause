@@ -172,7 +172,7 @@ MonoBehaviour:
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _typeSound: {fileID: 11400000, guid: 499d2ce6524dc2c41848fed3b641df22, type: 2}
   _backgroundMusic: {fileID: 0}
-  _nextSceneName: MainMenu
+  _nextSceneName: LevelRoom
 --- !u!1 &118984859
 GameObject:
   m_ObjectHideFlags: 0
