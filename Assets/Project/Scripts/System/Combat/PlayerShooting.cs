@@ -60,7 +60,10 @@ namespace DarkPixelGD.Player
             _aimPivot.rotation = Quaternion.Euler(0, 0, angle);
 
             bool aimingLeft = Mathf.Abs(angle) > 90f;
+            float scaleY = aimingLeft ? -1 : 1;
             //_aimPivotRenderer.flipY = aimingLeft;
+            _aimPivotRenderer.gameObject.transform.localScale = 
+                new Vector3(_aimPivotRenderer.gameObject.transform.localScale.x, scaleY, _aimPivotRenderer.gameObject.transform.localScale.z);
         }
 
         private void Shoot()
