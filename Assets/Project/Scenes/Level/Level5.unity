@@ -92861,6 +92861,9 @@ MonoBehaviour:
   _data: {fileID: 11400000, guid: 503921843ad6a6b478ab84a9b61c65da, type: 2}
   _health: {fileID: 1770398200}
   _shooting: {fileID: 1770398201}
+  _ghostPrefab: {fileID: 8453142674948447378, guid: 31b6b5738d753a7449f8d28c61e11bc2, type: 3}
+  _playerSpriteRenderer: {fileID: 1770398192}
+  _ghostSpawnInterval: 0.05
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _dashSound: {fileID: 11400000, guid: 48f8cc11cc8fb4d4593efef45bf879f5, type: 2}
   _juiceChannel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}

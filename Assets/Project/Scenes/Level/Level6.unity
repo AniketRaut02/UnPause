@@ -7135,7 +7135,7 @@ Transform:
   m_GameObject: {fileID: 273238638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.804001, y: 2.0420003, z: -10}
+  m_LocalPosition: {x: 10.991343, y: -1.4779998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7473,7 +7473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215664216476273964, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968827447564496137, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_Enabled
@@ -8247,7 +8247,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.804001, y: 2.0420003, z: -10}
+  m_LocalPosition: {x: 10.991343, y: -1.4779998, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8595,7 +8595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215664216476273964, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968827447564496137, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_Enabled
@@ -9234,7 +9234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &625295021
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18216,7 +18216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &919965810
 Transform:
   m_ObjectHideFlags: 0
@@ -93040,7 +93040,7 @@ Transform:
   m_GameObject: {fileID: 1770398191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 2.4, z: 0}
+  m_LocalPosition: {x: 6.795342, y: -1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -95456,7 +95456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3215664216476273964, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5968827447564496137, guid: 631ac6414ca2558469f459bb75e14ccd, type: 3}
       propertyPath: m_Enabled
