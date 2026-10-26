@@ -12,7 +12,7 @@ namespace DarkPixelGD.Systems.Orb
         [SerializeField] private OrbEffect _effect = OrbEffect.UnlockDash;
 
         [Header("Soul Settings")]
-        [SerializeField] private float _soulRestoreAmount = 25f;
+        [SerializeField] private float _soulRestoreAmount = 20f;
 
         [Header("Audio")]
         [SerializeField] private AudioEventChannelSO _audioChannel;
@@ -22,9 +22,12 @@ namespace DarkPixelGD.Systems.Orb
         [SerializeField] private JuiceEventChannelSO _juiceChannel;
         [SerializeField] private JuiceProfileSO _orbPickupJuiceProfile;
 
+
+        private bool _isCollected = false;
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!other.CompareTag("Player")) return;
+            if (_isCollected || !other.CompareTag("Player")) return;
+            _isCollected = true;
 
             // Play audio & juice effects
             if (_audioChannel != null && _orbPickupSoundSO != null)

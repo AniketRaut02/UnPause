@@ -14,24 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
   speakerName: Protagonist
   lines:
-  - text: '"Well, well, well..."'
+  - text: '"This is it."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: '"Look who came crawling back."'
+  - text: '"Just one more shard."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5
-  - text: '"I have to admit, DEV..."'
-    voiceClip: {fileID: 0}
-    minDisplayDuration: 1.5
-  - text: '"I didn''t think you''d be stupid enough to return."'
-    voiceClip: {fileID: 0}
-    minDisplayDuration: 1.5
-  - text: '"Her soul, her memories, her very existence..."'
-    voiceClip: {fileID: 0}
-    minDisplayDuration: 1.5
-  - text: '"All broken into little pieces."'
-    voiceClip: {fileID: 0}
-    minDisplayDuration: 1.5
-  - text: '"Collect them all, and perhaps you''ll get her back."'
+  - text: '"Then I''m coming for you."'
     voiceClip: {fileID: 0}
     minDisplayDuration: 1.5

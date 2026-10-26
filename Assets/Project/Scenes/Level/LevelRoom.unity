@@ -3272,7 +3272,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee55061dc0207c34981d7bac9e099847, type: 2}
   - {fileID: 11400000, guid: 47f39ecbaa9a8994686207683ae0cf95, type: 2}
   - {fileID: 11400000, guid: ac312a0879e0a1140bdf4122a5b47444, type: 2}
-  _nextSceneName: Level1
+  _nextSceneName: Level6
   _delayBeforeStart: 0.5
   _delayBetweenDialogues: 0.3
 --- !u!1 &565614463

@@ -52,8 +52,8 @@ namespace DarkPixelGD.Enemy
 
             if (_dropsItem && _itemPrefab != null)
             {
-                GameObject keyPickup = Instantiate(_itemPrefab, transform.position, Quaternion.identity);
-                keyPickup.GetComponent<KeyPickup>().isLastLevel = true; 
+                GameObject pickup = Instantiate(_itemPrefab, transform.position, Quaternion.identity);
+                
             }
                 
 

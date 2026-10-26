@@ -12,7 +12,7 @@ namespace DarkPixelGD.Enemy
         [SerializeField] private Transform _player;
         [SerializeField] private Health _health;
         [SerializeField] private EnemyDataSO _data;
-        [SerializeField] private EnemyShooter _standardShooter; // Reference to regular shooter for standard phase
+        [SerializeField] private EnemyShooter _standardShooter;
 
         [Header("Aiming References")]
         [SerializeField] private Transform _aimPivot;
@@ -31,8 +31,8 @@ namespace DarkPixelGD.Enemy
         [SerializeField] private int _ringBulletCount = 12;
 
         [Header("Attack C: Linear Bullet Stream Settings")]
-        [SerializeField] private int _streamBulletCount = 8;        // Number of bullets fired in the straight line
-        [SerializeField] private float _streamFireRate = 0.08f;     // Delay between each bullet in the stream
+        [SerializeField] private int _streamBulletCount = 8;
+        [SerializeField] private float _streamFireRate = 0.08f;
 
         private Rigidbody2D _rb;
         private Vector2 _currentVelocity;
@@ -42,6 +42,7 @@ namespace DarkPixelGD.Enemy
         public float CurrentSpeed => _currentVelocity.magnitude;
         public Health Health => _health;
 
+        private bool _isActivated = false; // Boss stays dormant until triggered
         private bool _isPerformingSpecial;
 
         private void Awake()
@@ -51,6 +52,9 @@ namespace DarkPixelGD.Enemy
             if (_health == null) _health = GetComponent<Health>();
             if (_standardShooter == null) _standardShooter = GetComponent<EnemyShooter>();
 
+            // Ensure standard shooter is disabled until the boss activates
+            if (_standardShooter != null) _standardShooter.enabled = false;
+
             if (_player == null)
             {
                 GameObject p = GameObject.FindGameObjectWithTag("Player");
@@ -58,21 +62,30 @@ namespace DarkPixelGD.Enemy
             }
         }
 
-        private void Start()
+        // Called externally when the player steps into the arena trigger zone
+        public void ActivateBoss()
         {
+            if (_isActivated) return;
+            _isActivated = true;
+
+            // Enable standard shooter and kick off pattern routine
+            if (_standardShooter != null) _standardShooter.enabled = true;
             StartCoroutine(BossPatternRoutine());
+
+            HintPopupUI.Instance?.Show("Boss Encountered!");
         }
 
         private void FixedUpdate()
         {
-            if (_player == null) return;
+            // Do not move or track player if not yet activated
+            if (!_isActivated || _player == null) return;
 
             Vector2 toPlayer = (Vector2)_player.position - _rb.position;
             float distance = toPlayer.magnitude;
 
             if (_isPerformingSpecial) return;
 
-            // 1. Standard Movement (Mimics EnemyController behavior)
+            // 1. Standard Movement
             bool inRange = distance <= _data.detectRange;
             bool isHolding = inRange && distance <= _data.stoppingDistance;
 
@@ -83,7 +96,7 @@ namespace DarkPixelGD.Enemy
             _currentVelocity = Vector2.MoveTowards(_currentVelocity, targetVelocity, accelerationRate * Time.fixedDeltaTime);
             _rb.linearVelocity = _currentVelocity;
 
-            // 2. Facing & Aiming Direction for EnemyAnimation
+            // 2. Facing & Aiming Direction
             if (inRange && distance > 0.01f)
                 _facingDirection = toPlayer.normalized;
 
@@ -92,15 +105,14 @@ namespace DarkPixelGD.Enemy
 
         private IEnumerator BossPatternRoutine()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1.5f); // Brief pause after activation before first special
 
-            while (true)
+            while (_isActivated)
             {
                 yield return new WaitForSeconds(_specialAttackInterval);
 
                 if (_player == null) yield break;
 
-                // Randomly choose between our 3 unique projectile attacks (0, 1, or 2)
                 int attackChoice = Random.Range(0, 3);
 
                 if (attackChoice == 0)
@@ -140,7 +152,7 @@ namespace DarkPixelGD.Enemy
 
             yield return new WaitForSeconds(0.6f);
 
-            if (_standardShooter != null) _standardShooter.enabled = true;
+            if (_isActivated && _standardShooter != null) _standardShooter.enabled = true;
             _isPerformingSpecial = false;
         }
 
@@ -166,7 +178,7 @@ namespace DarkPixelGD.Enemy
 
             yield return new WaitForSeconds(0.6f);
 
-            if (_standardShooter != null) _standardShooter.enabled = true;
+            if (_isActivated && _standardShooter != null) _standardShooter.enabled = true;
             _isPerformingSpecial = false;
         }
 
@@ -177,15 +189,12 @@ namespace DarkPixelGD.Enemy
 
             if (_standardShooter != null) _standardShooter.enabled = false;
 
-            // Brief aim telegraph pause before firing the stream
             yield return new WaitForSeconds(0.5f);
 
-            // Fire a rapid pool/stream of bullets tightly following the same line toward the player
             for (int i = 0; i < _streamBulletCount; i++)
             {
                 if (_player == null) break;
 
-                // Continuously sample player position or lock onto the initial vector (here we lock onto current player direction)
                 Vector2 toPlayer = ((Vector2)_player.position - (Vector2)_muzzle.position).normalized;
                 float angle = Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg;
                 Quaternion rotation = Quaternion.Euler(0, 0, angle);
@@ -196,9 +205,9 @@ namespace DarkPixelGD.Enemy
                 yield return new WaitForSeconds(_streamFireRate);
             }
 
-            yield return new WaitForSeconds(0.5f); // Recovery pause
+            yield return new WaitForSeconds(0.5f);
 
-            if (_standardShooter != null) _standardShooter.enabled = true;
+            if (_isActivated && _standardShooter != null) _standardShooter.enabled = true;
             _isPerformingSpecial = false;
         }
 

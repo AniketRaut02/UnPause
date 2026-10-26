@@ -670,8 +670,8 @@ MonoBehaviour:
   _controller: {fileID: 159016313644752917}
   _shooting: {fileID: 7514189196054732630}
   _rb: {fileID: 8149020049876633402}
-  _dropsHealthPickup: 0
-  _healthPickupPrefab: {fileID: 1199327146052571483, guid: f900092b1edd596489fc0bc51b556a82, type: 3}
+  _dropsItem: 1
+  _itemPrefab: {fileID: 1199327146052571483, guid: f900092b1edd596489fc0bc51b556a82, type: 3}
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _deathSoundSO: {fileID: 11400000, guid: a69830805c428864ea88edabef9b07af, type: 2}
   _juiceChannel: {fileID: 11400000, guid: 6663d58139b9f134580aa4052bb0206e, type: 2}

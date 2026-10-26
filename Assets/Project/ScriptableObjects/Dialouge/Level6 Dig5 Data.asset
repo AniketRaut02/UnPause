@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd7cfece835a8848b5b8778383aca6b, type: 3}
+  m_Name: Level6 Dig5 Data
+  m_EditorClassIdentifier: Assembly-CSharp::DarkPixelGD.Narrator.DialogueDataSO
+  speakerName: Protagonist
+  lines:
+  - text: '"Heh...Is it?"
+
+'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Unfortunately, this world was never built to hold soul shards together."
+
+'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"And there u are standing with all of them togather"'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Every shard you collect makes things a little... unstable."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You have destroyed my world when i was just trying to live a decent life."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"You still got a world that no developer controls."'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"Defeat me Get the Key"'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5
+  - text: '"TAKE YOUR GIRLFRIEND AND GET OUT!"'
+    voiceClip: {fileID: 0}
+    minDisplayDuration: 1.5

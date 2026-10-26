@@ -6942,6 +6942,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1770398193}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3635987115273562549, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
@@ -20002,6 +20006,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770398193}
     - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _dropsHealthPickup
       value: 1
       objectReference: {fileID: 0}
@@ -29862,6 +29870,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770398193}
     - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _dropsHealthPickup
       value: 1
       objectReference: {fileID: 0}
@@ -34067,6 +34079,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770398193}
     - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _dropsHealthPickup
       value: 1
       objectReference: {fileID: 0}
@@ -36516,6 +36532,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1770398193}
     - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _dropsHealthPickup
       value: 1
       objectReference: {fileID: 0}
@@ -36605,6 +36625,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 1770398193}
+    - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
+      propertyPath: _dropsItem
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1423047356044637493, guid: ddf6a3fb859660c43a2f967f97ee795f, type: 3}
       propertyPath: _dropsHealthPickup
       value: 1
@@ -44601,6 +44625,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1797548700350710029, guid: 68395799d22cb6346b52bf75bd910e75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6894120177436949953, guid: 68395799d22cb6346b52bf75bd910e75, type: 3}
+      propertyPath: isLastLevel
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7449469489256878020, guid: 68395799d22cb6346b52bf75bd910e75, type: 3}
