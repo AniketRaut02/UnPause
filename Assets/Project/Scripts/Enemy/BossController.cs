@@ -72,7 +72,7 @@ namespace DarkPixelGD.Enemy
             if (_standardShooter != null) _standardShooter.enabled = true;
             StartCoroutine(BossPatternRoutine());
 
-            HintPopupUI.Instance?.Show("Boss Encountered!");
+            //HintPopupUI.Instance?.Show("Boss Encountered!");
         }
 
         private void FixedUpdate()

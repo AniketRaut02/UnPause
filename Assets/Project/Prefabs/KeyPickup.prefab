@@ -261,4 +261,4 @@ MonoBehaviour:
   _audioChannel: {fileID: 11400000, guid: dcd241ca1e1160d4c933df6bc01f9444, type: 2}
   _pickupSound: {fileID: 11400000, guid: 17bdca0d22d38a1488875a7692fdd6e2, type: 2}
   isLastLevel: 1
-  shrunkDuration: 10
+  shrunkDuration: 15
